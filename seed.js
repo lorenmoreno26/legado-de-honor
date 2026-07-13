@@ -1,0 +1,63 @@
+// Datos iniciales extraidos del documento original
+function seed() {
+  return {
+    audios: [
+      { id: 1, categoria: 'Saludo Inicial', titulo: 'Audio 1', descripcion: 'Saludo general - Bienvenida al cliente', duracion: '~45 seg', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-SALUDO', orden: 1 },
+      { id: 2, categoria: 'Saludo Inicial', titulo: 'Audio 2', descripcion: 'Presentacion de servicios legales', duracion: '~1:30 min', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-SALUDO', orden: 2 },
+      { id: 3, categoria: 'Saludo Inicial', titulo: 'Audio 3', descripcion: 'Respuesta a preguntas frecuentes', duracion: '~2 min', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-SALUDO', orden: 3 },
+      { id: 4, categoria: 'Seguimiento y Cierre', titulo: 'Audio 4', descripcion: 'Seguimiento post-consulta', duracion: '~1 min', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-SEGUIMIENTO', orden: 1 },
+      { id: 5, categoria: 'Seguimiento y Cierre', titulo: 'Audio 5', descripcion: 'Cierre - confirmacion de vinculacion', duracion: '~1:15 min', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-SEGUIMIENTO', orden: 2 },
+      { id: 6, categoria: 'Seguimiento y Cierre', titulo: 'Audio 6', descripcion: 'Agradecimiento y proximos pasos', duracion: '~45 seg', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-SEGUIMIENTO', orden: 3 },
+      { id: 7, categoria: 'Manejo de Objeciones', titulo: 'Audio 7', descripcion: 'Objecion de precio', duracion: '~1 min', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-OBJECIONES', orden: 1 },
+      { id: 8, categoria: 'Manejo de Objeciones', titulo: 'Audio 8', descripcion: 'Objecion de desconfianza', duracion: '~1:20 min', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-OBJECIONES', orden: 2 },
+      { id: 9, categoria: 'Manejo de Objeciones', titulo: 'Audio 9', descripcion: 'Objecion: no necesito abogado', duracion: '~1 min', link_carpeta: 'https://drive.google.com/ENLACE-AUDIOS-OBJECIONES', orden: 3 }
+    ],
+    documentos: [
+      { id: 1, categoria: 'Traslados', titulo: 'Traslado Especial', link: 'https://docs.google.com/TRASLADO-ESPECIAL', nota: 'Adjuntar: cedula + carnet vigente + memorando del jefe inmediato', orden: 1 },
+      { id: 2, categoria: 'Traslados', titulo: 'Traslado Voluntario', link: 'https://docs.google.com/TRASLADO-VOLUNTARIO', nota: 'Adjuntar: cedula + carnet vigente + memorando del jefe inmediato', orden: 2 },
+      { id: 3, categoria: 'Derogacion', titulo: 'Solicitud de Derogacion', link: 'https://docs.google.com/DEROGACION', nota: 'Adjuntar: cedula + carnet vigente del usuario', orden: 1 },
+      { id: 4, categoria: 'Derechos de Peticion', titulo: 'D.P. Basico', link: 'https://docs.google.com/DP-BASICO', nota: 'Informacion general', orden: 1 },
+      { id: 5, categoria: 'Derechos de Peticion', titulo: 'D.P. Historial', link: 'https://docs.google.com/DP-HISTORICO', nota: 'Historial disciplinario', orden: 2 },
+      { id: 6, categoria: 'Derechos de Peticion', titulo: 'D.P. Prestaciones', link: 'https://docs.google.com/DP-PRESTACIONES', nota: 'Prestaciones sociales', orden: 3 },
+      { id: 7, categoria: 'Derechos de Peticion', titulo: 'D.P. Medidas', link: 'https://docs.google.com/DP-MEDIDAS', nota: 'Levantamiento de medidas. Plazo legal: 15 dias habiles (Ley 1755/2015)', orden: 4 },
+      { id: 8, categoria: 'Otros Documentos', titulo: 'Poder notarial', link: 'https://docs.google.com/PODER', nota: 'Formato poder notarial simple', orden: 1 },
+      { id: 9, categoria: 'Otros Documentos', titulo: 'Contrato de servicios', link: 'https://docs.google.com/CONTRATO', nota: 'Contrato de servicios profesionales', orden: 2 },
+      { id: 10, categoria: 'Otros Documentos', titulo: 'Recurso de apelacion', link: 'https://docs.google.com/APELACION', nota: 'Recurso de apelacion generico', orden: 3 },
+      { id: 11, categoria: 'Otros Documentos', titulo: 'Acuerdo de confidencialidad', link: 'https://docs.google.com/CONFIDENCIALIDAD', nota: '', orden: 4 }
+    ],
+    mensajes: [
+      { id: 1, categoria: 'Primer Contacto', titulo: 'Mensaje 1 - Saludo inicial (WhatsApp)',
+        contenido: 'Buenos dias/tardes, [NOMBRE]! Le contactamos de parte de LEGADO DE HONOR, firma especializada en derecho militar y policial. Nos dio gusto tener su contacto. Me gustaria conocer en que le podemos ayudar hoy. Estamos a sus ordenes.',
+        variables: '[NOMBRE]', orden: 1 },
+      { id: 2, categoria: 'Primer Contacto', titulo: 'Mensaje 2 - Presentacion de servicios',
+        contenido: 'Hola [NOMBRE], un gusto saludarle! En LEGADO DE HONOR manejamos:\n- Traslados (Especial y Voluntario)\n- Derogacion\n- Procesos disciplinarios\n- Derechos de peticion\n- Recursos de apelacion\n- Prestaciones sociales\n\nTenemos abogados especializados. Consulta sin compromiso! Cuenta con algun proceso activo o tema en el que necesite orientacion?',
+        variables: '[NOMBRE]', orden: 2 },
+      { id: 3, categoria: 'Seguimiento', titulo: 'Mensaje 3 - Seguimiento (sin respuesta)',
+        contenido: 'Hola [NOMBRE], buen dia! Hace unos dias le contactamos de LEGADO DE HONOR. Queriamos saber si pudo revisar la informacion que le compartimos. Estamos disponibles para resolver cualquier duda sin compromiso. Cuenta con unos minuticos para hablar?',
+        variables: '[NOMBRE]', orden: 1 },
+      { id: 4, categoria: 'Seguimiento', titulo: 'Mensaje 4 - Recordatorio de cita',
+        contenido: 'Hola [NOMBRE]! Le recordamos su reunion con nuestro equipo el dia [FECHA] a las [HORA]. Por favor confirme su asistencia. Si necesita reagendar, con gusto lo hacemos.',
+        variables: '[NOMBRE] | [FECHA] | [HORA]', orden: 2 },
+      { id: 5, categoria: 'Cierre de Venta', titulo: 'Mensaje 5 - Propuesta economica y cierre',
+        contenido: 'Hola [NOMBRE], un gusto! Segun lo conversado, el valor del proceso de [TIPO DE PROCESO] es $[VALOR]. Incluye:\n- Estudio del caso\n- Elaboracion y radicacion del documento\n- Seguimiento hasta respuesta\n\nPara iniciar necesitamos:\n- Cedula de ciudadania\n- Carnet vigente\n- Documento soporte (si aplica)\n\nQueda de nuestra parte con gusto atenderle!',
+        variables: '[NOMBRE] | [TIPO DE PROCESO] | [VALOR]', orden: 1 },
+      { id: 6, categoria: 'Cierre de Venta', titulo: 'Mensaje 6 - Confirmacion de vinculacion',
+        contenido: 'Hola [NOMBRE]! Bienvenido a la familia Legado de Honor! Confirmamos que ya quedo vinculado. Su abogado asignado es [ABOGADO] y estara en contacto pronto. Gracias por confiar en nosotros. Cualquier inquietud, aqui estamos!',
+        variables: '[NOMBRE] | [ABOGADO]', orden: 2 },
+      { id: 7, categoria: 'Manejo de Objeciones', titulo: 'Mensaje 7 - Objecion: precio alto',
+        contenido: 'Hola [NOMBRE], entiendo su preocupacion. Nuestros precios garantizan un servicio de calidad real. Trabajar con abogados especializados en derecho militar marca la diferencia en el resultado. Muchos clientes han recuperado derechos que superan la inversion realizada. Le gustaria que le explicaramos exactamente como funcionaria en su caso?',
+        variables: '[NOMBRE]', orden: 1 },
+      { id: 8, categoria: 'Manejo de Objeciones', titulo: 'Mensaje 8 - Objecion: necesito pensarlo',
+        contenido: 'Claro [NOMBRE], con toda confianza. Solo le comento que en muchos casos los tiempos son clave. Los procesos tienen plazos que al vencerse afectan el resultado. Puedo agendar una llamada de 10 minutos para resolver sus dudas sin compromiso. Cuando le quedaria bien?',
+        variables: '[NOMBRE]', orden: 2 }
+    ]
+  };
+}
+module.exports = seed;
+if (require.main === module) {
+  const fs = require('fs');
+  const path = require('path');
+  const DB_FILE = path.join(__dirname, 'legado-data.json');
+  fs.writeFileSync(DB_FILE, JSON.stringify(seed(), null, 2), 'utf8');
+  console.log('Datos iniciales recargados en legado-data.json');
+}
