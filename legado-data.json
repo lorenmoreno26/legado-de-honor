@@ -1,7 +1,79 @@
 {
   "audios": [
     {
+      "id": 1,
+      "categoria": "Afiliados",
+      "titulo": "Saludo y explicacion afiliacion",
+      "descripcion": "Saludo y explicacion de afiliacion",
+      "duracion": "~48 seg",
+      "link_carpeta": "https://drive.google.com/file/d/16XemZNWXWx9CERyXy7QXhfMH1_syNTH1/view?usp=sharing",
+      "orden": 1
+    },
+    {
+      "id": 2,
+      "categoria": "Afiliados",
+      "titulo": "Explicacion completa de afiliacion",
+      "descripcion": "Saludo y explicacion completa de afiliacion",
+      "duracion": "~2:40 min",
+      "link_carpeta": "https://drive.google.com/file/d/1CYHDyZ8AwarJWGZDsuf2aDZ0RpCS_7Ku/view?usp=sharing",
+      "orden": 2
+    },
+    {
+      "id": 3,
+      "categoria": "Saludo Inicial",
+      "titulo": "Audio 1",
+      "descripcion": "Saludo general - Bienvenida al cliente",
+      "duracion": "~45 seg",
+      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
+      "orden": 1
+    },
+    {
+      "id": 4,
+      "categoria": "Saludo Inicial",
+      "titulo": "Audio 2",
+      "descripcion": "Presentacion de servicios legales",
+      "duracion": "~1:30 min",
+      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
+      "orden": 2
+    },
+    {
+      "id": 5,
+      "categoria": "Saludo Inicial",
+      "titulo": "Audio 3",
+      "descripcion": "Respuesta a preguntas frecuentes",
+      "duracion": "~2 min",
+      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
+      "orden": 3
+    },
+    {
+      "id": 6,
+      "categoria": "Seguimiento y Cierre",
+      "titulo": "Audio 4",
+      "descripcion": "Seguimiento post-consulta",
+      "duracion": "~1 min",
+      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
+      "orden": 1
+    },
+    {
       "id": 7,
+      "categoria": "Seguimiento y Cierre",
+      "titulo": "Audio 5",
+      "descripcion": "Cierre - confirmacion de vinculacion",
+      "duracion": "~1:15 min",
+      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
+      "orden": 2
+    },
+    {
+      "id": 8,
+      "categoria": "Seguimiento y Cierre",
+      "titulo": "Audio 6",
+      "descripcion": "Agradecimiento y proximos pasos",
+      "duracion": "~45 seg",
+      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
+      "orden": 3
+    },
+    {
+      "id": 9,
       "categoria": "Manejo de Objeciones",
       "titulo": "Audio 7",
       "descripcion": "Objecion de precio",
@@ -10,7 +82,7 @@
       "orden": 1
     },
     {
-      "id": 8,
+      "id": 10,
       "categoria": "Manejo de Objeciones",
       "titulo": "Audio 8",
       "descripcion": "Objecion de desconfianza",
@@ -19,7 +91,7 @@
       "orden": 2
     },
     {
-      "id": 9,
+      "id": 11,
       "categoria": "Manejo de Objeciones",
       "titulo": "Audio 9",
       "descripcion": "Objecion: no necesito abogado",
@@ -189,10 +261,6 @@
     "alejandra": {
       "url": "https://docs.google.com/spreadsheets/d/1jL44PFcH3f2NmQcQVitPz0FKK4d4AWG5cY8V4SHvul8/edit?usp=sharing",
       "uploaded": "2026-07-11T20:49:05.496Z"
-    },
-    "dayana": {
-      "url": "https://docs.google.com/spreadsheets/d/1S0G3TFpf6dinpTWTCiWMTdpriYOUYjJgJSYuWqJNw2U/edit?usp=sharing",
-      "uploaded": "2026-07-11T20:51:59.823Z"
     }
   }
 }
