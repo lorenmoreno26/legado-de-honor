@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEGADO DE HONOR - Guia de Ventas</title>
+  <link rel="icon" href="logo.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="logo-badge">
+        <img src="logo.png" alt="Legado de Honor" onerror="this.onerror=null;this.src='logo.svg'" />
+      </div>
+      <div>
+        <h1>EQUIPO DE LEGADO DE SPARTANOS</h1>
+        <p class="tagline">DISCIPLINA · DEFENSA · LEALTAD</p>
+      </div>
+    </div>
+    <p class="lema"><span class="lema-highlight">No vendemos:</span> Abrimos oportunidades, inspiramos y construimos un Legado, protegemos y blindamos la carrera de nuestros heroes.</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="audios">Audio de Ventas</button>
+    <button class="tab" data-tab="documentos">Documentos</button>
+    <button class="tab" data-tab="mensajes">Mensajes</button>
+    <button class="tab tab-vendedor" data-tab="dayana">Dayana</button>
+    <button class="tab tab-vendedor" data-tab="alejandra">Alejandra</button>
+  </nav>
+
+  <main>
+    <section id="audios" class="panel active">
+      <div class="panel-header">
+        <h2>Audio de Ventas</h2>
+        <button class="btn-primary" onclick="openModal('audio')">+ Nuevo audio</button>
+      </div>
+      <div class="search-bar">
+        <input type="search" id="search-audios" placeholder="Buscar audio por nombre, descripcion o categoria..." oninput="renderAudios()" />
+      </div>
+      <div id="lista-audios" class="cards"></div>
+    </section>
+
+    <section id="documentos" class="panel">
+      <div class="panel-header">
+        <h2>Documentos legales</h2>
+        <button class="btn-primary" onclick="openModal('documento')">+ Nuevo documento</button>
+      </div>
+      <div class="search-bar">
+        <input type="search" id="search-documentos" placeholder="Buscar documento por nombre, nota o categoria..." oninput="renderDocumentos()" />
+      </div>
+      <div id="lista-documentos" class="cards"></div>
+    </section>
+
+    <section id="mensajes" class="panel">
+      <div class="panel-header">
+        <h2>Plantillas de mensajes</h2>
+        <button class="btn-primary" onclick="openModal('mensaje')">+ Nuevo mensaje</button>
+      </div>
+      <div class="search-bar">
+        <input type="search" id="search-mensajes" placeholder="Buscar mensaje por nombre, contenido o categoria..." oninput="renderMensajes()" />
+      </div>
+      <div id="lista-mensajes" class="cards"></div>
+    </section>
+
+    <section id="dayana" class="panel panel-vendedor">
+      <div class="welcome-card welcome-dayana">
+        <div class="welcome-side">
+          <div class="welcome-avatar">D</div>
+          <div class="welcome-heart">&#9829;</div>
+        </div>
+        <div class="welcome-content">
+          <div class="welcome-greeting" id="greeting-dayana">Bienvenida, Dayana</div>
+          <h2 class="welcome-title">Tu espacio en el Legado</h2>
+          <p class="welcome-message">Cada proceso que abres blinda la carrera de un heroe. Gracias por defender lo que otros construyen. Aqui gestionas tu impacto.</p>
+          <div class="welcome-quote">"La disciplina es el puente entre las metas y los logros."</div>
+          <div class="mi-enlace" id="enlace-dayana"></div>
+        </div>
+        <button class="btn-primary btn-nueva" onclick="abrirTablaComisiones('Dayana')">Tabla de comisiones</button>
+      </div>
+      <div id="tabla-comisiones-dayana" class="tabla-comisiones-shared"></div>
+      <div id="resumen-dayana" class="resumen-comisiones"></div>
+      <div class="search-bar">
+        <input type="search" id="search-dayana" placeholder="Buscar por cliente, tipo de proceso o estado..." oninput="renderComisiones('Dayana')" />
+      </div>
+      <div id="lista-dayana" class="tabla-comisiones"></div>
+    </section>
+
+    <section id="alejandra" class="panel panel-vendedor">
+      <div class="welcome-card welcome-alejandra">
+        <div class="welcome-side">
+          <div class="welcome-avatar">A</div>
+          <div class="welcome-heart">&#9829;</div>
+        </div>
+        <div class="welcome-content">
+          <div class="welcome-greeting" id="greeting-alejandra">Bienvenida, Alejandra</div>
+          <h2 class="welcome-title">Tu espacio en el Legado</h2>
+          <p class="welcome-message">Cada proceso que abres blinda la carrera de un heroe. Gracias por defender lo que otros construyen. Aqui gestionas tu impacto.</p>
+          <div class="welcome-quote">"El honor no se hereda, se construye dia a dia."</div>
+          <div class="mi-enlace" id="enlace-alejandra"></div>
+        </div>
+        <button class="btn-primary btn-nueva" onclick="abrirTablaComisiones('Alejandra')">Tabla de comisiones</button>
+      </div>
+      <div id="tabla-comisiones-alejandra" class="tabla-comisiones-shared"></div>
+      <div id="resumen-alejandra" class="resumen-comisiones"></div>
+      <div class="search-bar">
+        <input type="search" id="search-alejandra" placeholder="Buscar por cliente, tipo de proceso o estado..." oninput="renderComisiones('Alejandra')" />
+      </div>
+      <div id="lista-alejandra" class="tabla-comisiones"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Nuevo</h3>
+        <button class="close" onclick="closeModal()">&times;</button>
+      </div>
+      <form id="modal-form"></form>
+    </div>
+  </div>
+
+  <div id="modal-usar" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Rellenar mensaje</h3>
+        <button class="close" onclick="closeUsar()">&times;</button>
+      </div>
+      <div id="modal-usar-body"></div>
+    </div>
+  </div>
+
+  <input type="file" id="file-tabla-comisiones" style="display:none" accept=".xlsx,.xls,.xlsm,.csv,.ods,.pdf,.docx,.doc,.png,.jpg,.jpeg" />
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

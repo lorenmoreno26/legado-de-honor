@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#2a3418"/>
+      <stop offset="60%" stop-color="#141a08"/>
+      <stop offset="100%" stop-color="#050805"/>
+    </radialGradient>
+
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8e17f"/>
+      <stop offset="45%" stop-color="#e8c554"/>
+      <stop offset="55%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8b6914"/>
+    </linearGradient>
+
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a67c1f"/>
+      <stop offset="30%" stop-color="#f8e17f"/>
+      <stop offset="50%" stop-color="#fff8dc"/>
+      <stop offset="70%" stop-color="#f8e17f"/>
+      <stop offset="100%" stop-color="#a67c1f"/>
+    </linearGradient>
+
+    <linearGradient id="beretGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6b7a3a"/>
+      <stop offset="50%" stop-color="#4a5626"/>
+      <stop offset="100%" stop-color="#2d3318"/>
+    </linearGradient>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3d4a24"/>
+      <stop offset="100%" stop-color="#1a2010"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="500" height="500" fill="url(#bg)"/>
+
+  <!-- Marco decorativo -->
+  <circle cx="250" cy="250" r="240" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.3"/>
+
+  <!-- ESCUDO superior -->
+  <g filter="url(#shadow)">
+    <path d="M170 60 L330 60 L340 100 Q340 140 250 180 Q160 140 160 100 Z" fill="url(#shieldGrad)" stroke="url(#gold)" stroke-width="3"/>
+    <path d="M175 66 L325 66 L333 100 Q333 135 250 172 Q167 135 167 100 Z" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.6"/>
+  </g>
+
+  <!-- BOINA -->
+  <g filter="url(#shadow)">
+    <ellipse cx="250" cy="100" rx="72" ry="38" fill="url(#beretGrad)"/>
+    <ellipse cx="252" cy="90" rx="66" ry="30" fill="url(#beretGrad)"/>
+    <path d="M195 88 Q200 75 260 72 Q248 74 210 88 Z" fill="#7a8a45" opacity="0.4"/>
+    <path d="M185 112 Q195 138 250 140 Q305 138 315 112 Q305 122 250 124 Q195 122 185 112 Z" fill="#0a0d05"/>
+    <ellipse cx="250" cy="115" rx="65" ry="4" fill="#000" opacity="0.6"/>
+  </g>
+
+  <!-- Tridente dorado en la boina -->
+  <g fill="url(#gold)" transform="translate(288 82)" filter="url(#glow)">
+    <path d="M0 0 L-4 -8 L-10 -18 L-3 -14 L0 -20 L3 -14 L10 -18 L4 -8 Z"/>
+    <rect x="-1.5" y="-24" width="3" height="8"/>
+    <path d="M-6 4 L6 4 L4 8 L-4 8 Z"/>
+  </g>
+
+  <!-- Laurel izquierdo -->
+  <g fill="url(#gold)" opacity="0.95">
+    <ellipse cx="70" cy="210" rx="10" ry="16" transform="rotate(-30 70 210)"/>
+    <ellipse cx="80" cy="180" rx="10" ry="16" transform="rotate(-25 80 180)"/>
+    <ellipse cx="95" cy="152" rx="10" ry="16" transform="rotate(-20 95 152)"/>
+    <ellipse cx="115" cy="128" rx="10" ry="16" transform="rotate(-15 115 128)"/>
+    <ellipse cx="138" cy="108" rx="10" ry="16" transform="rotate(-10 138 108)"/>
+    <ellipse cx="70" cy="290" rx="10" ry="16" transform="rotate(30 70 290)"/>
+    <ellipse cx="80" cy="320" rx="10" ry="16" transform="rotate(25 80 320)"/>
+    <ellipse cx="95" cy="348" rx="10" ry="16" transform="rotate(20 95 348)"/>
+    <ellipse cx="115" cy="372" rx="10" ry="16" transform="rotate(15 115 372)"/>
+    <ellipse cx="138" cy="392" rx="10" ry="16" transform="rotate(10 138 392)"/>
+    <ellipse cx="62" cy="250" rx="9" ry="14" transform="rotate(-90 62 250)"/>
+  </g>
+  <path d="M60 250 Q62 200 90 160 Q125 118 165 100 M60 250 Q62 300 90 340 Q125 382 165 400" stroke="url(#gold)" stroke-width="3" fill="none" opacity="0.7"/>
+
+  <!-- Laurel derecho (espejo) -->
+  <g fill="url(#gold)" opacity="0.95">
+    <ellipse cx="430" cy="210" rx="10" ry="16" transform="rotate(30 430 210)"/>
+    <ellipse cx="420" cy="180" rx="10" ry="16" transform="rotate(25 420 180)"/>
+    <ellipse cx="405" cy="152" rx="10" ry="16" transform="rotate(20 405 152)"/>
+    <ellipse cx="385" cy="128" rx="10" ry="16" transform="rotate(15 385 128)"/>
+    <ellipse cx="362" cy="108" rx="10" ry="16" transform="rotate(10 362 108)"/>
+    <ellipse cx="430" cy="290" rx="10" ry="16" transform="rotate(-30 430 290)"/>
+    <ellipse cx="420" cy="320" rx="10" ry="16" transform="rotate(-25 420 320)"/>
+    <ellipse cx="405" cy="348" rx="10" ry="16" transform="rotate(-20 405 348)"/>
+    <ellipse cx="385" cy="372" rx="10" ry="16" transform="rotate(-15 385 372)"/>
+    <ellipse cx="362" cy="392" rx="10" ry="16" transform="rotate(-10 362 392)"/>
+    <ellipse cx="438" cy="250" rx="9" ry="14" transform="rotate(90 438 250)"/>
+  </g>
+  <path d="M440 250 Q438 200 410 160 Q375 118 335 100 M440 250 Q438 300 410 340 Q375 382 335 400" stroke="url(#gold)" stroke-width="3" fill="none" opacity="0.7"/>
+
+  <!-- TEXTO LEGADO -->
+  <text x="250" y="260" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-size="56" fill="url(#goldShine)" letter-spacing="6" filter="url(#glow)">LEGADO</text>
+
+  <!-- Separadores -->
+  <line x1="115" y1="285" x2="215" y2="285" stroke="url(#gold)" stroke-width="2"/>
+  <line x1="285" y1="285" x2="385" y2="285" stroke="url(#gold)" stroke-width="2"/>
+
+  <!-- TEXTO DE HONOR -->
+  <text x="250" y="318" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-size="40" fill="url(#goldShine)" letter-spacing="5">DE HONOR</text>
+
+  <!-- Balanza de justicia central -->
+  <g stroke="url(#gold)" stroke-width="1.8" fill="none" filter="url(#glow)">
+    <line x1="250" y1="340" x2="250" y2="365"/>
+    <line x1="232" y1="350" x2="268" y2="350"/>
+    <path d="M232 350 L226 362 Q232 366 238 362 Z" fill="url(#gold)"/>
+    <path d="M268 350 L262 362 Q268 366 274 362 Z" fill="url(#gold)"/>
+    <circle cx="250" cy="342" r="2.5" fill="url(#gold)"/>
+    <line x1="244" y1="368" x2="256" y2="368" stroke-width="2"/>
+  </g>
+
+  <!-- Cinta con lema -->
+  <g filter="url(#shadow)">
+    <path d="M100 380 Q250 370 400 380 L400 415 Q250 405 100 415 Z" fill="url(#beretGrad)" stroke="url(#gold)" stroke-width="2"/>
+    <path d="M80 385 L100 380 L100 415 L80 425 Z" fill="#3d4a24" stroke="url(#gold)" stroke-width="1"/>
+    <path d="M420 385 L400 380 L400 415 L420 425 Z" fill="#3d4a24" stroke="url(#gold)" stroke-width="1"/>
+  </g>
+  <text x="250" y="403" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="15" fill="url(#gold)" letter-spacing="4">DISCIPLINA · DEFENSA · LEALTAD</text>
+
+  <!-- Estrella decorativa -->
+  <g transform="translate(250 445)" fill="url(#gold)" filter="url(#glow)">
+    <path d="M0 -8 L2 -2 L8 -2 L3 2 L5 8 L0 4 L-5 8 L-3 2 L-8 -2 L-2 -2 Z"/>
+  </g>
+
+  <!-- Tagline inferior -->
+  <text x="250" y="480" text-anchor="middle" font-family="Georgia, serif" font-weight="600" font-size="10" fill="url(#gold)" letter-spacing="3" opacity="0.9">PROTEGEMOS A LOS QUE PROTEGEN NUESTRA NACION</text>
+</svg>
