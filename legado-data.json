@@ -105,7 +105,7 @@
       "id": 1,
       "categoria": "Traslados",
       "titulo": "Traslado Especial",
-      "link": "/formatos/TRASLADO-ESPECIAL.docx",
+      "link": "https://docs.google.com/document/d/15a6DSTgGpMvShi5nfiMqPau-m5iJdUz7/edit?usp=sharing&ouid=115351077987854527830&rtpof=true&sd=true",
       "nota": "Formulario oficial - Diligenciar todos los campos. Adjuntar cedula + carnet vigente + memorando",
       "orden": 1
     },
@@ -121,7 +121,7 @@
       "id": 3,
       "categoria": "Derogacion",
       "titulo": "Solicitud de Derogacion",
-      "link": "/formatos/DEROGATORIA-TRASLADO.docx",
+      "link": "https://docs.google.com/document/d/1V9lbDhdWlyNHmidwd4s9jiEV4vvlfrb_/edit?usp=sharing&ouid=115351077987854527830&rtpof=true&sd=true",
       "nota": "Formulario oficial de derogatoria - Adjuntar cedula + carnet vigente + soportes de la causal",
       "orden": 1
     },
