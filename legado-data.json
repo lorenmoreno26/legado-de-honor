@@ -1,79 +1,7 @@
 {
   "audios": [
     {
-      "id": 1,
-      "categoria": "Afiliados",
-      "titulo": "Saludo y explicacion afiliacion",
-      "descripcion": "Saludo y explicacion de afiliacion",
-      "duracion": "~48 seg",
-      "link_carpeta": "https://drive.google.com/file/d/16XemZNWXWx9CERyXy7QXhfMH1_syNTH1/view?usp=sharing",
-      "orden": 1
-    },
-    {
-      "id": 2,
-      "categoria": "Afiliados",
-      "titulo": "Explicacion completa de afiliacion",
-      "descripcion": "Saludo y explicacion completa de afiliacion",
-      "duracion": "~2:40 min",
-      "link_carpeta": "https://drive.google.com/file/d/1CYHDyZ8AwarJWGZDsuf2aDZ0RpCS_7Ku/view?usp=sharing",
-      "orden": 2
-    },
-    {
-      "id": 3,
-      "categoria": "Saludo Inicial",
-      "titulo": "Audio 1",
-      "descripcion": "Saludo general - Bienvenida al cliente",
-      "duracion": "~45 seg",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 1
-    },
-    {
-      "id": 4,
-      "categoria": "Saludo Inicial",
-      "titulo": "Audio 2",
-      "descripcion": "Presentacion de servicios legales",
-      "duracion": "~1:30 min",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 2
-    },
-    {
-      "id": 5,
-      "categoria": "Saludo Inicial",
-      "titulo": "Audio 3",
-      "descripcion": "Respuesta a preguntas frecuentes",
-      "duracion": "~2 min",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 3
-    },
-    {
-      "id": 6,
-      "categoria": "Seguimiento y Cierre",
-      "titulo": "Audio 4",
-      "descripcion": "Seguimiento post-consulta",
-      "duracion": "~1 min",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 1
-    },
-    {
       "id": 7,
-      "categoria": "Seguimiento y Cierre",
-      "titulo": "Audio 5",
-      "descripcion": "Cierre - confirmacion de vinculacion",
-      "duracion": "~1:15 min",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 2
-    },
-    {
-      "id": 8,
-      "categoria": "Seguimiento y Cierre",
-      "titulo": "Audio 6",
-      "descripcion": "Agradecimiento y proximos pasos",
-      "duracion": "~45 seg",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 3
-    },
-    {
-      "id": 9,
       "categoria": "Manejo de Objeciones",
       "titulo": "Audio 7",
       "descripcion": "Objecion de precio",
@@ -82,7 +10,7 @@
       "orden": 1
     },
     {
-      "id": 10,
+      "id": 8,
       "categoria": "Manejo de Objeciones",
       "titulo": "Audio 8",
       "descripcion": "Objecion de desconfianza",
@@ -91,13 +19,121 @@
       "orden": 2
     },
     {
-      "id": 11,
+      "id": 9,
       "categoria": "Manejo de Objeciones",
       "titulo": "Audio 9",
       "descripcion": "Objecion: no necesito abogado",
       "duracion": "~1 min",
       "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
       "orden": 3
+    },
+    {
+      "id": 10,
+      "categoria": "Afiliados",
+      "titulo": "Saludo y explicacion afiliacion",
+      "descripcion": "Saludo y explicacion de afiliacion",
+      "duracion": "~48 seg",
+      "link_carpeta": "https://drive.google.com/file/d/16XemZNWXWx9CERyXy7QXhfMH1_syNTH1/view?usp=sharing",
+      "orden": 1
+    },
+    {
+      "id": 11,
+      "categoria": "Afiliados",
+      "titulo": "Explicacion completa de afiliacion",
+      "descripcion": "Saludo y explicacion completa de afiliacion",
+      "duracion": "~2:40 min",
+      "link_carpeta": "https://drive.google.com/file/d/1CYHDyZ8AwarJWGZDsuf2aDZ0RpCS_7Ku/view?usp=sharing",
+      "orden": 2
+    },
+    {
+      "id": 12,
+      "categoria": "Afiliados",
+      "titulo": "Desafiliacion de otra firma",
+      "descripcion": "Saludo y explicacion sobre desafiliacion de otra firma",
+      "duracion": "~23 seg",
+      "link_carpeta": "https://drive.google.com/file/d/16NdyUDWKOPaBLFlnStg5BN16EH_WOJ_p/view?usp=sharing",
+      "orden": 3
+    },
+    {
+      "id": 13,
+      "categoria": "Traslados y Derogaciones",
+      "titulo": "Traslado y revocatoria",
+      "descripcion": "Saludo Pilar y explicacion de traslado y revocatoria",
+      "duracion": "~2:08 min",
+      "link_carpeta": "https://drive.google.com/file/d/1CxPK9c_OgqnlyEOx3N77hiMf9sb3iVYb/view?usp=sharing",
+      "orden": 1
+    },
+    {
+      "id": 14,
+      "categoria": "Traslados y Derogaciones",
+      "titulo": "Motivos para solicitar traslado especial",
+      "descripcion": "Explicacion de los motivos validos para solicitar traslado especial",
+      "duracion": "~2:15 min",
+      "link_carpeta": "https://drive.google.com/file/d/11XOmnf6FIO3H-lzyerskN3E3U_yFs7tX/view?usp=sharing",
+      "orden": 2
+    },
+    {
+      "id": 15,
+      "categoria": "Traslados y Derogaciones",
+      "titulo": "Solicitud formulario traslado y revocatoria",
+      "descripcion": "Saludo Pilar - solicitud de formulario para traslado y revocatoria",
+      "duracion": "~1:49 min",
+      "link_carpeta": "https://drive.google.com/file/d/1EyCtAJKETYgh-d1zKzu_4ENU2YPuIftH/view?usp=sharing",
+      "orden": 3
+    },
+    {
+      "id": 16,
+      "categoria": "Traslados y Derogaciones",
+      "titulo": "Explicacion traslado, asesoria y afiliacion",
+      "descripcion": "Saludo, presentacion Pilar - Clientes que vienen de TikTok",
+      "duracion": "~2:13 min",
+      "link_carpeta": "https://drive.google.com/file/d/1bEAl9i-uVwkERWmSUCJnsBfbD39L0yVI/view?usp=sharing",
+      "orden": 4
+    },
+    {
+      "id": 17,
+      "categoria": "Asesorias",
+      "titulo": "Asesoria - explicacion corta Pilar",
+      "descripcion": "Saludo, presentacion Pilar y explicacion corta",
+      "duracion": "~47 seg",
+      "link_carpeta": "https://drive.google.com/file/d/1PA5Welw6mZYIrdZnnAO_bHyKTBVi_5H0/view?usp=sharing",
+      "orden": 1
+    },
+    {
+      "id": 18,
+      "categoria": "Asesorias",
+      "titulo": "No manejamos descuentos por nomina",
+      "descripcion": "Aclaracion: no se manejan descuentos por nomina",
+      "duracion": "~26 seg",
+      "link_carpeta": "https://drive.google.com/file/d/1yp613w-eg9XU9k1OFmbnoggDpNfk29GX/view?usp=sharing",
+      "orden": 2
+    },
+    {
+      "id": 19,
+      "categoria": "Asesorias",
+      "titulo": "Medico laboral Pilar",
+      "descripcion": "Saludo presentacion Pilar - Medico laboral",
+      "duracion": "~1:50 min",
+      "link_carpeta": "https://drive.google.com/file/d/14kZXZhuYxYiFLCtsdej6UVPoVp3LKAwF/view?usp=sharing",
+      "orden": 3
+    },
+    {
+      "id": 20,
+      "categoria": "Asesorias",
+      "titulo": "Saludo y apertura - TikTok Pilar",
+      "descripcion": "Saludo y presentacion para clientes que vienen de TikTok",
+      "duracion": "~18 seg",
+      "link_carpeta": "https://drive.google.com/file/d/1U4T3Kfx2PxoaOd92gCf-gOVGZdEPnzK7/view?usp=sharing",
+      "orden": 4
+    },
+    {
+      "id": 21,
+      "categoria": "Asesorias",
+      "titulo": "No contesto llamada - TikTok",
+      "descripcion": "Saludo (buenas tardes) y presentacion cuando no contestan la llamada",
+      "duracion": "~25 seg",
+      "link_carpeta": "https://drive.google.com/file/d/1dQ9YB4OoowUZnlHKAlaLNHRR9zZryy9U/view?usp=sharing",
+      "orden": 5
     }
   ],
   "documentos": [
@@ -261,6 +297,10 @@
     "alejandra": {
       "url": "https://docs.google.com/spreadsheets/d/1jL44PFcH3f2NmQcQVitPz0FKK4d4AWG5cY8V4SHvul8/edit?usp=sharing",
       "uploaded": "2026-07-11T20:49:05.496Z"
+    },
+    "dayana": {
+      "url": "https://docs.google.com/spreadsheets/d/1S0G3TFpf6dinpTWTCiWMTdpriYOUYjJgJSYuWqJNw2U/edit?usp=sharing",
+      "uploaded": "2026-07-11T20:51:59.823Z"
     }
   }
 }
