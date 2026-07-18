@@ -1,33 +1,6 @@
 {
   "audios": [
     {
-      "id": 7,
-      "categoria": "Manejo de Objeciones",
-      "titulo": "Audio 7",
-      "descripcion": "Objecion de precio",
-      "duracion": "~1 min",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 1
-    },
-    {
-      "id": 8,
-      "categoria": "Manejo de Objeciones",
-      "titulo": "Audio 8",
-      "descripcion": "Objecion de desconfianza",
-      "duracion": "~1:20 min",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 2
-    },
-    {
-      "id": 9,
-      "categoria": "Manejo de Objeciones",
-      "titulo": "Audio 9",
-      "descripcion": "Objecion: no necesito abogado",
-      "duracion": "~1 min",
-      "link_carpeta": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "orden": 3
-    },
-    {
       "id": 10,
       "categoria": "Afiliados",
       "titulo": "Saludo y explicacion afiliacion",
