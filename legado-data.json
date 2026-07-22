@@ -113,90 +113,18 @@
     {
       "id": 1,
       "categoria": "Traslados",
-      "titulo": "Traslado Especial",
+      "titulo": "Formulario Traslado por Situación Especial",
       "link": "https://docs.google.com/document/d/15a6DSTgGpMvShi5nfiMqPau-m5iJdUz7/edit?usp=sharing&ouid=115351077987854527830&rtpof=true&sd=true",
-      "nota": "Formulario oficial - Diligenciar todos los campos. Adjuntar cedula + carnet vigente + memorando",
+      "nota": "Formulario oficial para solicitar traslado por situación especial (Google Docs)",
       "orden": 1
-    },
-    {
-      "id": 2,
-      "categoria": "Traslados",
-      "titulo": "Traslado Voluntario",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "Adjuntar: cedula + carnet vigente + memorando del jefe inmediato",
-      "orden": 2
     },
     {
       "id": 3,
-      "categoria": "Derogacion",
-      "titulo": "Solicitud de Derogacion",
+      "categoria": "Derogatoria",
+      "titulo": "Formulario Solicitud de Derogatoria de Traslado",
       "link": "https://docs.google.com/document/d/1V9lbDhdWlyNHmidwd4s9jiEV4vvlfrb_/edit?usp=sharing&ouid=115351077987854527830&rtpof=true&sd=true",
-      "nota": "Formulario oficial de derogatoria - Adjuntar cedula + carnet vigente + soportes de la causal",
+      "nota": "Formulario oficial para solicitar derogatoria de traslado (Google Docs)",
       "orden": 1
-    },
-    {
-      "id": 4,
-      "categoria": "Derechos de Peticion",
-      "titulo": "D.P. Basico",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "Informacion general",
-      "orden": 1
-    },
-    {
-      "id": 5,
-      "categoria": "Derechos de Peticion",
-      "titulo": "D.P. Historial",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "Historial disciplinario",
-      "orden": 2
-    },
-    {
-      "id": 6,
-      "categoria": "Derechos de Peticion",
-      "titulo": "D.P. Prestaciones",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "Prestaciones sociales",
-      "orden": 3
-    },
-    {
-      "id": 7,
-      "categoria": "Derechos de Peticion",
-      "titulo": "D.P. Medidas",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "Levantamiento de medidas. Plazo legal: 15 dias habiles (Ley 1755/2015)",
-      "orden": 4
-    },
-    {
-      "id": 8,
-      "categoria": "Otros Documentos",
-      "titulo": "Poder notarial",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "Formato poder notarial simple",
-      "orden": 1
-    },
-    {
-      "id": 9,
-      "categoria": "Otros Documentos",
-      "titulo": "Contrato de servicios",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "Contrato de servicios profesionales",
-      "orden": 2
-    },
-    {
-      "id": 10,
-      "categoria": "Otros Documentos",
-      "titulo": "Recurso de apelacion",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "Recurso de apelacion generico",
-      "orden": 3
-    },
-    {
-      "id": 11,
-      "categoria": "Otros Documentos",
-      "titulo": "Acuerdo de confidencialidad",
-      "link": "https://drive.google.com/drive/folders/1jgYl8WvsyLhYD9y5urveRqklrJqSf61G?usp=sharing",
-      "nota": "",
-      "orden": 4
     }
   ],
   "mensajes": [
