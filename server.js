@@ -63,6 +63,26 @@ app.delete('/api/tabla-comisiones/:vendedor', (req, res) => {
   res.json({ ok: true });
 });
 
+// ============ Tabla de tarifas (link único de servicios) ============
+app.get('/api/tabla-tarifas', (req, res) => {
+  res.json(db.tablaTarifas || null);
+});
+app.post('/api/tabla-tarifas', (req, res) => {
+  const { url } = req.body;
+  if (!url) return res.status(400).json({ error: 'falta url' });
+  db.tablaTarifas = {
+    url: String(url).trim(),
+    uploaded: new Date().toISOString()
+  };
+  saveDB(db);
+  res.json(db.tablaTarifas);
+});
+app.delete('/api/tabla-tarifas', (req, res) => {
+  delete db.tablaTarifas;
+  saveDB(db);
+  res.json({ ok: true });
+});
+
 // ============ CRUD generico ============
 function makeCRUD(resource, fields) {
   app.get('/api/' + resource, (req, res) => {
