@@ -25,6 +25,7 @@
     <button class="tab active" data-tab="audios">Audio de Ventas</button>
     <button class="tab" data-tab="documentos">Documentos</button>
     <button class="tab" data-tab="mensajes">Mensajes</button>
+    <button class="tab" data-tab="tarifas">Tarifas</button>
     <button class="tab tab-vendedor" data-tab="dayana">Dayana</button>
     <button class="tab tab-vendedor" data-tab="alejandra">Alejandra</button>
   </nav>
@@ -61,6 +62,17 @@
         <input type="search" id="search-mensajes" placeholder="Buscar mensaje por nombre, contenido o categoria..." oninput="renderMensajes()" />
       </div>
       <div id="lista-mensajes" class="cards"></div>
+    </section>
+
+    <section id="tarifas" class="panel">
+      <div class="panel-header">
+        <h2>Tarifas y valores de los servicios</h2>
+        <div style="display:flex;gap:8px">
+          <button class="btn-primary" id="btn-abrir-tarifas-drive" style="display:none">Abrir en Drive</button>
+          <button class="btn-primary" onclick="abrirTablaTarifas()">Cambiar link</button>
+        </div>
+      </div>
+      <div id="tarifas-contenedor" class="tarifas-contenedor"></div>
     </section>
 
     <section id="dayana" class="panel panel-vendedor">

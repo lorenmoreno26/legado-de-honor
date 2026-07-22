@@ -40,6 +40,89 @@ async function loadAll() {
   tablasComisiones.alejandra = await api('GET', '/tabla-comisiones/alejandra');
   renderTablaComisiones('Dayana');
   renderTablaComisiones('Alejandra');
+  tablaTarifas = await api('GET', '/tabla-tarifas');
+  renderTablaTarifas();
+}
+
+// ============ Tabla de tarifas (link único) ============
+let tablaTarifas = null;
+
+function driveEmbedUrl(url) {
+  if (!url) return '';
+  // Google Sheets / Docs / Slides: usa /preview
+  let m = url.match(/\/(spreadsheets|document|presentation)\/d\/([\w-]+)/);
+  if (m) return `https://docs.google.com/${m[1]}/d/${m[2]}/preview`;
+  // Google Drive folder
+  m = url.match(/\/drive\/folders\/([\w-]+)/);
+  if (m) return `https://drive.google.com/embeddedfolderview?id=${m[1]}#grid`;
+  // Google Drive file
+  m = url.match(/\/file\/d\/([\w-]+)/);
+  if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
+  return url;
+}
+
+function abrirTablaTarifas() {
+  const actual = tablaTarifas?.url || '';
+  const nuevo = prompt('Pega el link de tu tabla en Drive (dejalo vacio para eliminar):', actual);
+  if (nuevo === null) return;
+  if (nuevo.trim() === '') {
+    borrarTablaTarifas();
+  } else {
+    guardarTablaTarifas(nuevo.trim());
+  }
+}
+
+async function guardarTablaTarifas(url) {
+  const res = await fetch('/api/tabla-tarifas', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ url })
+  });
+  if (res.ok) {
+    tablaTarifas = await res.json();
+    renderTablaTarifas();
+    toast('Link guardado');
+  } else {
+    toast('Error al guardar');
+  }
+}
+
+async function borrarTablaTarifas() {
+  if (!confirm('Eliminar el link de la tabla de tarifas?')) return;
+  await fetch('/api/tabla-tarifas', { method: 'DELETE' });
+  tablaTarifas = null;
+  renderTablaTarifas();
+  toast('Eliminada');
+}
+
+function renderTablaTarifas() {
+  const cont = document.getElementById('tarifas-contenedor');
+  const btnAbrir = document.getElementById('btn-abrir-tarifas-drive');
+  if (!cont) return;
+  if (tablaTarifas && tablaTarifas.url) {
+    if (btnAbrir) {
+      btnAbrir.style.display = 'inline-flex';
+      btnAbrir.onclick = () => window.open(tablaTarifas.url, '_blank');
+    }
+    const embed = driveEmbedUrl(tablaTarifas.url);
+    cont.innerHTML = `
+      <div class="tarifas-meta">Actualizada ${new Date(tablaTarifas.uploaded).toLocaleDateString('es-CO', {day:'2-digit',month:'short',year:'numeric'})} · Los cambios en Drive se reflejan al instante</div>
+      <div class="tarifas-frame">
+        <iframe src="${escapeAttr(embed)}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    `;
+  } else {
+    if (btnAbrir) btnAbrir.style.display = 'none';
+    cont.innerHTML = `
+      <div class="archivo-card empty" onclick="abrirTablaTarifas()" style="cursor:pointer">
+        <div class="archivo-icon">📊</div>
+        <div class="archivo-info">
+          <div class="archivo-nombre">Aun no hay tabla de tarifas</div>
+          <div class="archivo-meta">Haz clic aqui para pegar el link de tu tabla en Google Drive.</div>
+        </div>
+      </div>
+    `;
+  }
 }
 
 function groupBy(arr, key) {
