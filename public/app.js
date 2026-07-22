@@ -292,30 +292,32 @@ function renderTablaComisiones(vendedor) {
   const el = document.getElementById('tabla-comisiones-' + key);
   if (!el) return;
   const tabla = tablasComisiones[key];
-  el.innerHTML = tabla && tabla.url ? `
-    <div class="archivo-card">
-      <div class="archivo-icon">📊</div>
-      <div class="archivo-info">
-        <div class="archivo-nombre">Tabla de comisiones de ${escapeHtml(vendedor)}</div>
-        <div class="archivo-meta">
-          Actualizada ${new Date(tabla.uploaded).toLocaleDateString('es-CO', {day:'2-digit',month:'short',year:'numeric'})} · Los cambios en Drive se reflejan al instante
+  if (tabla && tabla.url) {
+    const embed = driveEmbedUrl(tabla.url);
+    el.innerHTML = `
+      <div class="tarifas-meta">
+        Tabla de ${escapeHtml(vendedor)} · Actualizada ${new Date(tabla.uploaded).toLocaleDateString('es-CO', {day:'2-digit',month:'short',year:'numeric'})} · Los cambios en Drive se reflejan al instante
+        <span style="float:right;display:inline-flex;gap:6px">
+          <a class="btn-ghost small" href="${escapeAttr(tabla.url)}" target="_blank" rel="noopener">Abrir en Drive</a>
+          <button class="btn-ghost small" onclick="abrirTablaComisiones('${escapeAttr(vendedor)}')">Cambiar link</button>
+          <button class="btn-ghost small danger" onclick="borrarTablaComisiones('${escapeAttr(vendedor)}')">Eliminar</button>
+        </span>
+      </div>
+      <div class="tarifas-frame">
+        <iframe src="${escapeAttr(embed)}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    `;
+  } else {
+    el.innerHTML = `
+      <div class="archivo-card empty" onclick="abrirTablaComisiones('${escapeAttr(vendedor)}')" style="cursor:pointer">
+        <div class="archivo-icon">📊</div>
+        <div class="archivo-info">
+          <div class="archivo-nombre">Aun no hay tabla de comisiones</div>
+          <div class="archivo-meta">Haz clic para pegar el link de tu tabla en Drive.</div>
         </div>
       </div>
-      <div class="archivo-acciones">
-        <a class="btn-primary small" href="${escapeAttr(tabla.url)}" target="_blank" rel="noopener">Abrir en Drive</a>
-        <button class="btn-ghost small" onclick="abrirTablaComisiones('${escapeAttr(vendedor)}')">Cambiar link</button>
-        <button class="btn-ghost small danger" onclick="borrarTablaComisiones('${escapeAttr(vendedor)}')">Eliminar</button>
-      </div>
-    </div>
-  ` : `
-    <div class="archivo-card empty" onclick="abrirTablaComisiones('${escapeAttr(vendedor)}')">
-      <div class="archivo-icon">📊</div>
-      <div class="archivo-info">
-        <div class="archivo-nombre">Aun no hay tabla de comisiones</div>
-        <div class="archivo-meta">Haz clic para pegar el link de tu tabla en Drive.</div>
-      </div>
-    </div>
-  `;
+    `;
+  }
 }
 
 async function borrarTablaComisiones(vendedor) {
