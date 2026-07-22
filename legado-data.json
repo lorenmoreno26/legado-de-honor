@@ -202,66 +202,58 @@
   "mensajes": [
     {
       "id": 1,
-      "categoria": "Primer Contacto",
-      "titulo": "Mensaje 1 - Saludo inicial (WhatsApp)",
-      "contenido": "Buenos dias/tardes, [NOMBRE]! Le contactamos de parte de LEGADO DE HONOR, firma especializada en derecho militar y policial. Nos dio gusto tener su contacto. Me gustaria conocer en que le podemos ayudar hoy. Estamos a sus ordenes.",
-      "variables": "[NOMBRE]",
+      "categoria": "Apertura y Bienvenida",
+      "titulo": "Apertura - Primer saludo",
+      "contenido": "Comando muy buenas tardes, ¿Cómo se encuentra el día de hoy?",
+      "variables": "",
       "orden": 1
     },
     {
       "id": 2,
-      "categoria": "Primer Contacto",
-      "titulo": "Mensaje 2 - Presentacion de servicios",
-      "contenido": "Hola [NOMBRE], un gusto saludarle! En LEGADO DE HONOR manejamos:\n- Traslados (Especial y Voluntario)\n- Derogacion\n- Procesos disciplinarios\n- Derechos de peticion\n- Recursos de apelacion\n- Prestaciones sociales\n\nTenemos abogados especializados. Consulta sin compromiso! Cuenta con algun proceso activo o tema en el que necesite orientacion?",
-      "variables": "[NOMBRE]",
+      "categoria": "Apertura y Bienvenida",
+      "titulo": "Mensaje de reactivación",
+      "contenido": "👮🏻‍♂️ Muy buen día, Comando. 👮🏻‍♀️\n\n¿Cómo ha estado? Es un gusto saludarlo.\n\nQueremos recordarle que estamos aquí para servirle. 🫡\n\nDios lo bendiga.",
+      "variables": "",
       "orden": 2
     },
     {
       "id": 3,
-      "categoria": "Seguimiento",
-      "titulo": "Mensaje 3 - Seguimiento (sin respuesta)",
-      "contenido": "Hola [NOMBRE], buen dia! Hace unos dias le contactamos de LEGADO DE HONOR. Queriamos saber si pudo revisar la informacion que le compartimos. Estamos disponibles para resolver cualquier duda sin compromiso. Cuenta con unos minuticos para hablar?",
-      "variables": "[NOMBRE]",
-      "orden": 1
+      "categoria": "Apertura y Bienvenida",
+      "titulo": "Bienvenida a Legado",
+      "contenido": "🛡️ ¡Bienvenido, {nombre}, a LEGADO DE HONOR! 🛡️\n\nDesde hoy cuentas con un equipo que te brinda respaldo, asesoría confiable y atención cercana, sin importar en qué parte del país estés. 🚔👮‍♂️\n\n🤝 La doctora Pilar Rodríguez, quien lidera nuestra firma, junto a todo el equipo, te da la bienvenida y reafirma su compromiso de acompañarte en cada paso.\n\n⚖️ Disciplina. Defensa. Lealtad. 🎖️",
+      "variables": "nombre",
+      "orden": 3
     },
     {
       "id": 4,
-      "categoria": "Seguimiento",
-      "titulo": "Mensaje 4 - Recordatorio de cita",
-      "contenido": "Hola [NOMBRE]! Le recordamos su reunion con nuestro equipo el dia [FECHA] a las [HORA]. Por favor confirme su asistencia. Si necesita reagendar, con gusto lo hacemos.",
-      "variables": "[NOMBRE] | [FECHA] | [HORA]",
-      "orden": 2
+      "categoria": "Aclaraciones",
+      "titulo": "Aclaración - Firma independiente",
+      "contenido": "Muchas gracias por escribirnos. Queremos contarle que *LEGADO DE HONOR* es una firma independiente, liderada por la *Dra. Pilar Rodríguez*, por lo que no pertenece a *Military*, firma del *Dr. Moreno*. Con mucho gusto estamos aquí para brindarle toda la asesoría y el acompañamiento que necesite.",
+      "variables": "",
+      "orden": 1
     },
     {
       "id": 5,
-      "categoria": "Cierre de Venta",
-      "titulo": "Mensaje 5 - Propuesta economica y cierre",
-      "contenido": "Hola [NOMBRE], un gusto! Segun lo conversado, el valor del proceso de [TIPO DE PROCESO] es $[VALOR]. Incluye:\n- Estudio del caso\n- Elaboracion y radicacion del documento\n- Seguimiento hasta respuesta\n\nPara iniciar necesitamos:\n- Cedula de ciudadania\n- Carnet vigente\n- Documento soporte (si aplica)\n\nQueda de nuestra parte con gusto atenderle!",
-      "variables": "[NOMBRE] | [TIPO DE PROCESO] | [VALOR]",
+      "categoria": "Asesoría",
+      "titulo": "Explicación de asesoría",
+      "contenido": "La asesoría especializada tiene una duración de una hora y será atendida por uno de nuestros especialistas en el área.\n\nSe realiza de manera virtual por Google Meet y tiene un valor de $150.000.\n\nDurante la asesoría usted podrá explicar detalladamente su caso. Además, si al finalizar decide que llevemos el proceso, este valor será abonado a los honorarios.",
+      "variables": "",
       "orden": 1
     },
     {
       "id": 6,
-      "categoria": "Cierre de Venta",
-      "titulo": "Mensaje 6 - Confirmacion de vinculacion",
-      "contenido": "Hola [NOMBRE]! Bienvenido a la familia Legado de Honor! Confirmamos que ya quedo vinculado. Su abogado asignado es [ABOGADO] y estara en contacto pronto. Gracias por confiar en nosotros. Cualquier inquietud, aqui estamos!",
-      "variables": "[NOMBRE] | [ABOGADO]",
-      "orden": 2
-    },
-    {
-      "id": 7,
-      "categoria": "Manejo de Objeciones",
-      "titulo": "Mensaje 7 - Objecion: precio alto",
-      "contenido": "Hola [NOMBRE], entiendo su preocupacion. Nuestros precios garantizan un servicio de calidad real. Trabajar con abogados especializados en derecho militar marca la diferencia en el resultado. Muchos clientes han recuperado derechos que superan la inversion realizada. Le gustaria que le explicaramos exactamente como funcionaria en su caso?",
-      "variables": "[NOMBRE]",
+      "categoria": "Afiliación",
+      "titulo": "Servicios incluidos en la afiliación",
+      "contenido": "*SERVICIOS INCLUIDOS EN LA AFILIACIÓN*\n\n👮‍♂️ Comando, nuestra afiliación le brinda acompañamiento y asesoría jurídica especializada en asuntos relacionados con el servicio policial. ⚖️📄\n\n• Procesos Disciplinarios\n• Solicitud de Traslados por situación Especial - DEROGACIÓN\n• Procesos ante la Justicia Penal Militar\n• Procesos Administrativos por pérdida de Material de Guerra\n• Apelación de Anotaciones Negativas\n• Procesos Médico - Laborales\n\nEs importante informarle que los hechos ocurridos *después* de la afiliación serán cubiertos por la firma conforme a los términos establecidos. ✅\n\nSin embargo, los procesos o hechos *anteriores* a la afiliación no cuentan con cobertura, aunque recibirán un beneficio especial con el *20% de descuento* en honorarios. 🤝",
+      "variables": "",
       "orden": 1
     },
     {
-      "id": 8,
-      "categoria": "Manejo de Objeciones",
-      "titulo": "Mensaje 8 - Objecion: necesito pensarlo",
-      "contenido": "Claro [NOMBRE], con toda confianza. Solo le comento que en muchos casos los tiempos son clave. Los procesos tienen plazos que al vencerse afectan el resultado. Puedo agendar una llamada de 10 minutos para resolver sus dudas sin compromiso. Cuando le quedaria bien?",
-      "variables": "[NOMBRE]",
+      "id": 7,
+      "categoria": "Afiliación",
+      "titulo": "Canal exclusivo afiliados",
+      "contenido": "🪖👮‍♂️ *Apreciado afiliado, Dios lo bendiga.*\n\nPara recibir atención prioritaria como afiliado, por favor escríbanos a nuestro *canal exclusivo de atención*.\n\nAllí podrá solicitar orientación, acompañamiento y seguimiento a sus requerimientos jurídicos.\n\n📲 Canal exclusivo: https://wa.me/573125943180\n\n🎖️ *Disciplina. Defensa. Lealtad.*",
+      "variables": "",
       "orden": 2
     }
   ],
