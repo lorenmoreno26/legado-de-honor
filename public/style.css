@@ -652,10 +652,6 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.5; }
 .welcome-dayana .welcome-avatar {
   background: linear-gradient(135deg, #ffd6d6 0%, #d4af37 100%);
 }
-.welcome-alejandra { border-left: 5px solid #b8d4f4; }
-.welcome-alejandra .welcome-avatar {
-  background: linear-gradient(135deg, #d6e5ff 0%, #d4af37 100%);
-}
 .welcome-paula { border-left: 5px solid #d4b8f4; }
 .welcome-paula .welcome-avatar {
   background: linear-gradient(135deg, #eadcff 0%, #d4af37 100%);

@@ -33,19 +33,15 @@ async function loadAll() {
   renderDocumentos();
   renderMensajes();
   renderComisiones('Dayana');
-  renderComisiones('Alejandra');
   renderComisiones('Paula');
   renderComisiones('Liceth');
   renderBienvenida('Dayana');
-  renderBienvenida('Alejandra');
   renderBienvenida('Paula');
   renderBienvenida('Liceth');
   tablasComisiones.dayana = await api('GET', '/tabla-comisiones/dayana');
-  tablasComisiones.alejandra = await api('GET', '/tabla-comisiones/alejandra');
   tablasComisiones.paula = await api('GET', '/tabla-comisiones/paula');
   tablasComisiones.liceth = await api('GET', '/tabla-comisiones/liceth');
   renderTablaComisiones('Dayana');
-  renderTablaComisiones('Alejandra');
   renderTablaComisiones('Paula');
   renderTablaComisiones('Liceth');
   tablaTarifas = await api('GET', '/tabla-tarifas');
@@ -265,7 +261,7 @@ function renderMensajes() {
 }
 
 // ============ Tabla de comisiones (link por vendedor) ============
-const tablasComisiones = { dayana: null, alejandra: null, paula: null, liceth: null };
+const tablasComisiones = { dayana: null, paula: null, liceth: null };
 
 function abrirTablaComisiones(vendedor) {
   const key = vendedor.toLowerCase();
@@ -378,7 +374,7 @@ function editarEnlace(vendedor) {
   toast('Enlace actualizado');
 }
 
-// ============ Comisiones (Dayana / Alejandra) ============
+// ============ Comisiones (por vendedora) ============
 function formatoMoneda(n) {
   const v = parseFloat(n) || 0;
   return '$' + v.toLocaleString('es-CO', { maximumFractionDigits: 0 });

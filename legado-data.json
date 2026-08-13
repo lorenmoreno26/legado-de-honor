@@ -187,13 +187,17 @@
   ],
   "comisiones": [],
   "tablasVendedor": {
-    "alejandra": {
-      "url": "https://docs.google.com/spreadsheets/d/1jL44PFcH3f2NmQcQVitPz0FKK4d4AWG5cY8V4SHvul8/edit?usp=sharing",
-      "uploaded": "2026-07-11T20:49:05.496Z"
-    },
     "dayana": {
       "url": "https://docs.google.com/spreadsheets/d/1S0G3TFpf6dinpTWTCiWMTdpriYOUYjJgJSYuWqJNw2U/edit?usp=sharing",
       "uploaded": "2026-07-11T20:51:59.823Z"
+    },
+    "paula": {
+      "url": "https://docs.google.com/spreadsheets/d/1yXDzNLrjpXkiVeen_CTumoB2ZDQxCr_oju9fTafAyoA/edit?gid=1308008552#gid=1308008552",
+      "uploaded": "2026-08-12T16:30:00.000Z"
+    },
+    "liceth": {
+      "url": "https://docs.google.com/spreadsheets/d/1GaIaKkMOK6GdNJ38fHadrZBRgULizWkaPxWh7nLnD3Q/edit?gid=1308008552#gid=1308008552",
+      "uploaded": "2026-08-12T16:30:00.000Z"
     }
   },
   "tablaTarifas": {
