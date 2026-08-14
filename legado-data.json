@@ -185,6 +185,96 @@
       "orden": 2
     }
   ],
+  "mensajesAfiliados": [
+    {
+      "id": 1,
+      "categoria": "Propuesta",
+      "titulo": "Propuesta de honorarios",
+      "contenido": "PROPUESTA DE HONORARIOS\nBogotá, {fecha}\n\nMi Apreciado Comando,\n\nReciba un cordial saludo.\n\nEn LEGADO DE HONOR, entendemos la importancia de contar con un respaldo legal sólido y especializado en asuntos militares y policiales. Sabemos que cada caso es único y que las decisiones jurídicas pueden impactar de manera significativa su vida y carrera. Por ello, nos ponemos a su disposición para brindarle una representación legal con el compromiso, la transparencia y el profesionalismo que nos caracterizan. Para lo cual adjuntamos propuesta de honorarios para su estudio.",
+      "variables": "{fecha}",
+      "orden": 1
+    },
+    {
+      "id": 2,
+      "categoria": "Poder",
+      "titulo": "Envío de poder para firma",
+      "contenido": "Mi apreciado Comando. Dios lo bendiga.\n\nEspero se encuentre muy bien.\n\nMe permito remitir el poder para su correspondiente firma.\n\nMil gracias por Confiar en nosotros.\n\nLEGADO DE HONOR.",
+      "variables": "",
+      "orden": 1
+    },
+    {
+      "id": 3,
+      "categoria": "Datos",
+      "titulo": "Solicitud de datos personales",
+      "contenido": "Mi comando, Por favor me puede indicar:\n\n• Nombre completo\n• Correo\n• Cédula\n• Teléfono\n• Grado\n• Fecha de nacimiento",
+      "variables": "",
+      "orden": 1
+    },
+    {
+      "id": 4,
+      "categoria": "Atención",
+      "titulo": "Disculpa por no atender llamada",
+      "contenido": "Mi comando, mil disculpas, en este momento nos encontramos atendiendo una diligencia y no podemos tomar su llamada como usted lo merece; no obstante, si gusta enviarnos audios comentándonos la situación lo escucharemos con todo el gusto del mundo. Esto también nos sirve para que el equipo legal de LEGADO DE HONOR pueda consultar la información que usted nos brinda las veces que sea necesario.",
+      "variables": "",
+      "orden": 1
+    },
+    {
+      "id": 5,
+      "categoria": "Saludos",
+      "titulo": "Saludo inicial",
+      "contenido": "Mi comando, muy buenas.\n\n¿Cómo está? ¿Cómo se encuentra el día de hoy? Dios me lo bendiga.\n\nPor favor indíqueme cómo podemos ayudarlo el día de hoy.",
+      "variables": "",
+      "orden": 1
+    },
+    {
+      "id": 6,
+      "categoria": "Asesoría",
+      "titulo": "Ofrecer / coordinar asesoría",
+      "contenido": "Comprendo mi comando, claro que sí.\n\nSi gusta, podemos coordinar una asesoría con uno de nuestros abogados expertos con el fin de que le comente la situación a fondo y podamos trazar una ruta de acción para su caso en concreto.\n\nRecuerde que estas asesorías son completamente gratuitas por ser afiliado a LEGADO DE HONOR.",
+      "variables": "",
+      "orden": 1
+    },
+    {
+      "id": 7,
+      "categoria": "Asesoría",
+      "titulo": "Confirmación de citación",
+      "contenido": "Por favor confírmeme que a su correo haya llegado la citación de la asesoría mi {grado}.",
+      "variables": "{grado}",
+      "orden": 2
+    },
+    {
+      "id": 8,
+      "categoria": "Asesoría",
+      "titulo": "Solicitar nota de voz",
+      "contenido": "Si gusta puede enviarnos una nota de voz, sin importar lo extensa que sea, para comentarnos la particularidad del caso. De este modo también tenemos la ventaja que la información nos queda guardada para poder consultarla posteriormente mientras redactamos la solicitud.",
+      "variables": "",
+      "orden": 3
+    },
+    {
+      "id": 9,
+      "categoria": "Asesoría",
+      "titulo": "Recordatorio de asesoría",
+      "contenido": "Mi comando, muy buenos días, ¿cómo está? ¿Cómo se encuentra? Dios me lo bendiga.\n\nLe escribo para recordarle la asesoría que tenemos sobre las {tema}.\n\n¿Cuenta con el link de conexión o gusta que se lo remita por este medio?",
+      "variables": "{tema}",
+      "orden": 4
+    },
+    {
+      "id": 10,
+      "categoria": "Traslado",
+      "titulo": "Diligenciar formulario de traslado",
+      "contenido": "Lo importante es diligenciarlo lo más completo y detallado posible, ya que de esa forma el equipo legal de LEGADO DE HONOR tendrá más información para sustentar la solicitud de traslado.\n\nApenas nos remita el formulario diligenciado empezaremos la redacción del documento y tendremos un plazo máximo de 10 días hábiles para entregarle su documento mi comando.",
+      "variables": "",
+      "orden": 1
+    },
+    {
+      "id": 11,
+      "categoria": "Pagos",
+      "titulo": "Confirmación de pago mensualidad",
+      "contenido": "👮🏻‍♂️ ¡Gracias por seguir confiando en nosotros! 🫡\n\n🪖 Hemos recibido el pago de su mensualidad. Su confianza nos motiva a continuar trabajando con compromiso y dedicación, brindándole el respaldo jurídico que usted merece. ⚖️🤝\n\n👮🏻‍♀️ Gracias por permitirnos acompañar a quienes sirven con honor a Colombia. Seguiremos firmes, protegiendo sus derechos en cada paso. 🇨🇴🛡️\n\n🙏🏻 ¡Dios lo bendiga! Estamos para servirle.",
+      "variables": "",
+      "orden": 1
+    }
+  ],
   "comisiones": [],
   "tablasVendedor": {
     "dayana": {

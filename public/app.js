@@ -1,5 +1,5 @@
 // ============ Estado global ============
-const state = { audios: [], documentos: [], mensajes: [], comisiones: [] };
+const state = { audios: [], documentos: [], mensajes: [], mensajesAfiliados: [], comisiones: [] };
 let editingType = null;
 let editingId = null;
 
@@ -28,10 +28,12 @@ async function loadAll() {
   state.audios = await api('GET', '/audios');
   state.documentos = await api('GET', '/documentos');
   state.mensajes = await api('GET', '/mensajes');
+  state.mensajesAfiliados = await api('GET', '/mensajesAfiliados');
   state.comisiones = await api('GET', '/comisiones');
   renderAudios();
   renderDocumentos();
   renderMensajes();
+  renderMensajesAfiliados();
   renderComisiones('Dayana');
   renderComisiones('Paula');
   renderComisiones('Liceth');
@@ -221,10 +223,17 @@ function renderDocumentos() {
 }
 
 function renderMensajes() {
-  const q = document.getElementById('search-mensajes')?.value || '';
-  const filtered = state.mensajes.filter(m => matchesSearch(m, q, ['titulo', 'contenido', 'categoria']));
+  renderMensajesEnContenedor(state.mensajes, 'search-mensajes', 'lista-mensajes', 'mensaje');
+}
+function renderMensajesAfiliados() {
+  renderMensajesEnContenedor(state.mensajesAfiliados, 'search-mensajes-afiliados', 'lista-mensajes-afiliados', 'mensaje-afiliado');
+}
+function renderMensajesEnContenedor(lista, searchId, listId, editType) {
+  const q = document.getElementById(searchId)?.value || '';
+  const filtered = lista.filter(m => matchesSearch(m, q, ['titulo', 'contenido', 'categoria']));
   const grouped = groupBy(filtered, 'categoria');
-  const c = document.getElementById('lista-mensajes');
+  const c = document.getElementById(listId);
+  if (!c) return;
   c.innerHTML = '';
   if (filtered.length === 0) {
     c.innerHTML = '<div class="no-results">No hay mensajes que coincidan con "' + escapeHtml(q) + '"</div>';
@@ -252,8 +261,8 @@ function renderMensajes() {
       card.querySelector('[data-copy]').onclick = () => copyText(m.contenido);
       const usarBtn = card.querySelector('[data-usar]');
       if (usarBtn) usarBtn.onclick = () => openUsar(m);
-      card.querySelector('[data-edit]').onclick = () => openModal('mensaje', m);
-      card.querySelector('[data-del]').onclick = () => del('mensaje', m.id);
+      card.querySelector('[data-edit]').onclick = () => openModal(editType, m);
+      card.querySelector('[data-del]').onclick = () => del(editType, m.id);
       cards.appendChild(card);
     });
     c.appendChild(group);
@@ -531,7 +540,7 @@ function openModal(type, item) {
         <button type="submit" class="btn-primary">Guardar</button>
       </div>
     `;
-  } else if (type === 'mensaje') {
+  } else if (type === 'mensaje' || type === 'mensaje-afiliado') {
     form.innerHTML = `
       <div><label>Categoria</label><input name="categoria" required value="${escapeAttr(item?.categoria || '')}" placeholder="Ej: Primer Contacto" /></div>
       <div><label>Titulo</label><input name="titulo" required value="${escapeAttr(item?.titulo || '')}" /></div>
@@ -560,7 +569,7 @@ function closeModal() {
 }
 
 async function save(type, id, data) {
-  const pathMap = { audio: '/audios', documento: '/documentos', mensaje: '/mensajes' };
+  const pathMap = { audio: '/audios', documento: '/documentos', mensaje: '/mensajes', 'mensaje-afiliado': '/mensajesAfiliados' };
   if (id) {
     await api('PUT', pathMap[type] + '/' + id, data);
   } else {
@@ -573,7 +582,7 @@ async function save(type, id, data) {
 
 async function del(type, id) {
   if (!confirm('Eliminar este elemento?')) return;
-  const pathMap = { audio: '/audios', documento: '/documentos', mensaje: '/mensajes' };
+  const pathMap = { audio: '/audios', documento: '/documentos', mensaje: '/mensajes', 'mensaje-afiliado': '/mensajesAfiliados' };
   await api('DELETE', pathMap[type] + '/' + id);
   toast('Eliminado');
   loadAll();

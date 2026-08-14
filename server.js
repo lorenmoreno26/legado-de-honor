@@ -116,6 +116,8 @@ function makeCRUD(resource, fields) {
 makeCRUD('audios',      ['categoria', 'titulo', 'descripcion', 'duracion', 'link_carpeta', 'orden']);
 makeCRUD('documentos',  ['categoria', 'titulo', 'link', 'nota', 'orden']);
 makeCRUD('mensajes',    ['categoria', 'titulo', 'contenido', 'variables', 'orden']);
+if (!db.mensajesAfiliados) { db.mensajesAfiliados = []; saveDB(db); }
+makeCRUD('mensajesAfiliados', ['categoria', 'titulo', 'contenido', 'variables', 'orden']);
 if (!db.comisiones) { db.comisiones = []; saveDB(db); }
 makeCRUD('comisiones',  ['vendedor', 'cliente', 'tipo_proceso', 'fecha', 'valor', 'estado', 'notas', 'orden']);
 

@@ -25,6 +25,7 @@
     <button class="tab active" data-tab="audios">Audio de Ventas</button>
     <button class="tab" data-tab="documentos">Documentos</button>
     <button class="tab" data-tab="mensajes">Mensajes</button>
+    <button class="tab" data-tab="mensajes-afiliados">Mensajes Afiliados</button>
     <button class="tab" data-tab="tarifas">Tarifas</button>
     <button class="tab tab-vendedor" data-tab="dayana">Dayana</button>
     <button class="tab tab-vendedor" data-tab="paula">Paula</button>
@@ -63,6 +64,17 @@
         <input type="search" id="search-mensajes" placeholder="Buscar mensaje por nombre, contenido o categoria..." oninput="renderMensajes()" />
       </div>
       <div id="lista-mensajes" class="cards"></div>
+    </section>
+
+    <section id="mensajes-afiliados" class="panel">
+      <div class="panel-header">
+        <h2>Mensajes para afiliados</h2>
+        <button class="btn-primary" onclick="openModal('mensaje-afiliado')">+ Nuevo mensaje</button>
+      </div>
+      <div class="search-bar">
+        <input type="search" id="search-mensajes-afiliados" placeholder="Buscar mensaje por nombre, contenido o categoria..." oninput="renderMensajesAfiliados()" />
+      </div>
+      <div id="lista-mensajes-afiliados" class="cards"></div>
     </section>
 
     <section id="tarifas" class="panel">
