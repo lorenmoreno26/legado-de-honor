@@ -898,3 +898,48 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.5; }
   border: 0;
   display: block;
 }
+
+/* ============ Tareas Diarias - Modal a pantalla completa ============ */
+.tareas-info { margin-top: 8px; }
+
+.modal-fullscreen {
+  padding: 0 !important;
+  background: rgba(0, 0, 0, 0.95);
+}
+.modal-fullscreen.active {
+  display: block !important;
+}
+.modal-fullscreen iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+  background: #fff;
+  display: block;
+}
+.close-fullscreen {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border: 2px solid #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.15s;
+}
+.close-fullscreen:hover {
+  transform: scale(1.1);
+  background: var(--danger, #f87171);
+}

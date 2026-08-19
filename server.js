@@ -83,6 +83,32 @@ app.delete('/api/tabla-tarifas', (req, res) => {
   res.json({ ok: true });
 });
 
+// ============ Tareas diarias (documento por vendedor) ============
+if (!db.tareasDiarias) { db.tareasDiarias = {}; saveDB(db); }
+
+app.get('/api/tareas-diarias/:vendedor', (req, res) => {
+  const v = req.params.vendedor.toLowerCase();
+  res.json(db.tareasDiarias?.[v] || null);
+});
+app.post('/api/tareas-diarias/:vendedor', (req, res) => {
+  const v = req.params.vendedor.toLowerCase();
+  const { url } = req.body;
+  if (!url) return res.status(400).json({ error: 'falta url' });
+  if (!db.tareasDiarias) db.tareasDiarias = {};
+  db.tareasDiarias[v] = {
+    url: String(url).trim(),
+    uploaded: new Date().toISOString()
+  };
+  saveDB(db);
+  res.json(db.tareasDiarias[v]);
+});
+app.delete('/api/tareas-diarias/:vendedor', (req, res) => {
+  const v = req.params.vendedor.toLowerCase();
+  if (db.tareasDiarias) delete db.tareasDiarias[v];
+  saveDB(db);
+  res.json({ ok: true });
+});
+
 // ============ CRUD generico ============
 function makeCRUD(resource, fields) {
   app.get('/api/' + resource, (req, res) => {

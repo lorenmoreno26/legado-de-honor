@@ -109,6 +109,17 @@
         <input type="search" id="search-dayana" placeholder="Buscar por cliente, tipo de proceso o estado..." oninput="renderComisiones('Dayana')" />
       </div>
       <div id="lista-dayana" class="tabla-comisiones"></div>
+
+      <div class="tareas-diarias-section" style="margin-top:32px;padding-top:24px;border-top:2px solid #d4af37">
+        <div class="panel-header">
+          <h2>📋 Tareas Diarias</h2>
+          <div style="display:flex;gap:8px">
+            <button class="btn-primary btn-nueva" onclick="abrirTareasFullscreen('Dayana')">📄 Abrir a pantalla completa</button>
+            <button class="btn-ghost" onclick="cambiarTareasLink('Dayana')">Cambiar link</button>
+          </div>
+        </div>
+        <div id="tareas-info-dayana" class="tareas-info"></div>
+      </div>
     </section>
 
     <section id="paula" class="panel panel-vendedor">
@@ -176,6 +187,11 @@
       </div>
       <div id="modal-usar-body"></div>
     </div>
+  </div>
+
+  <div id="modal-tareas-fullscreen" class="modal-overlay modal-fullscreen">
+    <button class="close-fullscreen" onclick="cerrarTareasFullscreen()" aria-label="Cerrar">✕</button>
+    <iframe id="tareas-fullscreen-iframe" src="about:blank" frameborder="0" allowfullscreen></iframe>
   </div>
 
   <input type="file" id="file-tabla-comisiones" style="display:none" accept=".xlsx,.xls,.xlsm,.csv,.ods,.pdf,.docx,.doc,.png,.jpg,.jpeg" />

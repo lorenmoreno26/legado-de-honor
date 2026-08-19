@@ -48,10 +48,97 @@ async function loadAll() {
   renderTablaComisiones('Liceth');
   tablaTarifas = await api('GET', '/tabla-tarifas');
   renderTablaTarifas();
+  tareasDiarias.dayana = await api('GET', '/tareas-diarias/dayana');
+  renderTareasInfo('Dayana');
 }
 
 // ============ Tabla de tarifas (link único) ============
 let tablaTarifas = null;
+const tareasDiarias = { dayana: null };
+
+function renderTareasInfo(vendedor) {
+  const key = vendedor.toLowerCase();
+  const el = document.getElementById('tareas-info-' + key);
+  if (!el) return;
+  const t = tareasDiarias[key];
+  if (t && t.url) {
+    const fecha = new Date(t.uploaded).toLocaleDateString('es-CO', {day:'2-digit',month:'short',year:'numeric'});
+    el.innerHTML = `
+      <div class="tarifas-meta">
+        📄 Documento configurado · Actualizado ${fecha} · Los cambios en Drive se reflejan al instante.
+        Haz clic en <strong>"Abrir a pantalla completa"</strong> para ver las tareas.
+      </div>
+    `;
+  } else {
+    el.innerHTML = `
+      <div class="archivo-card empty" onclick="cambiarTareasLink('${escapeAttr(vendedor)}')" style="cursor:pointer">
+        <div class="archivo-icon">📋</div>
+        <div class="archivo-info">
+          <div class="archivo-nombre">Aún no hay documento de tareas configurado</div>
+          <div class="archivo-meta">Haz clic aquí para pegar el link de Google Drive del documento.</div>
+        </div>
+      </div>
+    `;
+  }
+}
+
+function abrirTareasFullscreen(vendedor) {
+  const key = vendedor.toLowerCase();
+  const t = tareasDiarias[key];
+  if (!t || !t.url) {
+    toast('Primero configura el link del documento');
+    cambiarTareasLink(vendedor);
+    return;
+  }
+  const embed = driveEmbedUrl(t.url);
+  const iframe = document.getElementById('tareas-fullscreen-iframe');
+  iframe.src = embed;
+  document.getElementById('modal-tareas-fullscreen').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarTareasFullscreen() {
+  document.getElementById('modal-tareas-fullscreen').classList.remove('active');
+  document.getElementById('tareas-fullscreen-iframe').src = 'about:blank';
+  document.body.style.overflow = '';
+}
+
+function cambiarTareasLink(vendedor) {
+  const key = vendedor.toLowerCase();
+  const actual = tareasDiarias[key]?.url || '';
+  const nuevo = prompt('Pega el link del documento de Google Drive (déjalo vacío para eliminar):', actual);
+  if (nuevo === null) return;
+  if (nuevo.trim() === '') {
+    borrarTareasLink(vendedor);
+  } else {
+    guardarTareasLink(vendedor, nuevo.trim());
+  }
+}
+
+async function guardarTareasLink(vendedor, url) {
+  const key = vendedor.toLowerCase();
+  const res = await fetch('/api/tareas-diarias/' + key, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ url })
+  });
+  if (res.ok) {
+    tareasDiarias[key] = await res.json();
+    renderTareasInfo(vendedor);
+    toast('Link guardado');
+  } else {
+    toast('Error al guardar');
+  }
+}
+
+async function borrarTareasLink(vendedor) {
+  const key = vendedor.toLowerCase();
+  if (!confirm('¿Eliminar el link del documento de tareas?')) return;
+  await fetch('/api/tareas-diarias/' + key, { method: 'DELETE' });
+  tareasDiarias[key] = null;
+  renderTareasInfo(vendedor);
+  toast('Eliminado');
+}
 
 function driveEmbedUrl(url) {
   if (!url) return '';
@@ -664,6 +751,14 @@ document.querySelectorAll('.modal-overlay').forEach(m => {
   m.addEventListener('click', (e) => {
     if (e.target === m) m.classList.remove('active');
   });
+});
+
+// Cerrar el modal de tareas a pantalla completa con ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('modal-tareas-fullscreen');
+    if (modal && modal.classList.contains('active')) cerrarTareasFullscreen();
+  }
 });
 
 // Cargar al inicio
