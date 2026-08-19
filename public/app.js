@@ -486,6 +486,7 @@ function renderComisiones(vendedor) {
   const totalPendiente = misComisiones.filter(c => c.estado === 'Pendiente').reduce((s, c) => s + (parseFloat(c.valor) || 0), 0);
   const total = misComisiones.reduce((s, c) => s + (parseFloat(c.valor) || 0), 0);
   const resumen = document.getElementById('resumen-' + vendedor.toLowerCase());
+  if (!resumen) return; // sección de comisiones detalladas removida para esta vendedora
   resumen.innerHTML = `
     <div class="stat-card"><div class="stat-label">Total registrado</div><div class="stat-value">${formatoMoneda(total)}</div><div class="stat-sub">${misComisiones.length} comisiones</div></div>
     <div class="stat-card success"><div class="stat-label">Pagado</div><div class="stat-value">${formatoMoneda(totalPagado)}</div></div>
