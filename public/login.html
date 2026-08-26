@@ -71,16 +71,14 @@
   }
   .team-photo {
     width: 100%;
-    max-width: 340px;
+    max-width: 360px;
     aspect-ratio: 3 / 2;
-    border-radius: 16px;
-    background-image: url('/equipo.jpg');
-    background-size: cover;
-    background-position: center top;
-    box-shadow:
-      0 12px 32px rgba(0, 0, 0, 0.5),
-      0 0 0 1px rgba(212, 175, 55, 0.25);
-    margin-bottom: 24px;
+    background-image: url('/equipo.webp');
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.55));
+    margin-bottom: 20px;
   }
   .welcome-title {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
@@ -134,11 +132,16 @@
     background: rgba(212, 175, 55, 0.05);
   }
   .welcome-msg {
-    color: var(--text-body);
-    font-size: 13px;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent-2);
+    font-size: 17px;
+    letter-spacing: 0.5px;
     line-height: 1.5;
-    max-width: 300px;
-    margin-bottom: 22px;
+    max-width: 320px;
+    margin-bottom: 24px;
+    text-shadow: 0 1px 8px rgba(212, 175, 55, 0.2);
   }
   .signin-title {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
@@ -269,17 +272,17 @@
   <main class="lobby">
     <section class="side-left">
       <div class="team-photo" role="img" aria-label="Equipo Legado de Honor"></div>
-      <h1 class="welcome-title">¡Bienvenido a<br>Legado de Honor!</h1>
+      <h1 class="welcome-title">¡Bienvenido,<br>Spartano!</h1>
       <div class="welcome-body">
-        <p>Es un honor tenerte con nosotros. Desde hoy haces parte de una comunidad de hombres y mujeres comprometidos con el servicio, la disciplina y el honor.</p>
-        <p>Aquí encontrarás respaldo jurídico, acompañamiento permanente e información de valor.</p>
+        <p>Es un orgullo tenerte en el equipo de ventas de <strong>Legado de Honor</strong>.</p>
+        <p>Este es tu <strong>Manual de Ventas</strong>: aquí encuentras audios, documentos, plantillas de mensajes, tarifas y tu tabla de comisiones. Todas las herramientas para representar con <em>disciplina, defensa y lealtad</em>.</p>
       </div>
     </section>
     <section class="side-right">
       <img src="/logo.png" alt="Legado de Honor" class="brand-logo" onerror="this.onerror=null;this.src='/logo.svg'">
       <div class="brand-name">LEGADO DE HONOR</div>
       <div class="spartanos-badge">· EQUIPO SPARTANOS ·</div>
-      <p class="welcome-msg">Bienvenido a casa, guerrero. Aquí comienza una alianza de honor.</p>
+      <p class="welcome-msg">Un propósito. Un equipo. Un Legado.</p>
       <h2 class="signin-title">Iniciar sesión</h2>
       <form class="login-form" onsubmit="return doLogin(event)" autocomplete="on">
         <div id="error" class="error" role="alert"></div>

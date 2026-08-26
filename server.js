@@ -42,7 +42,7 @@ const AUTH_PASS = process.env.LEGADO_PASS || 'Legadodehonor0826.';
 const AUTH_TOKEN = process.env.LEGADO_TOKEN || 'sp4rt4nos_h0n0r_2026_MJA_priv_XyZ_9k2';
 const PUBLIC_PATHS = new Set([
   '/login', '/login.html', '/api/login', '/api/logout',
-  '/logo.png', '/logo.svg', '/favicon.ico', '/equipo.jpg'
+  '/logo.png', '/logo.svg', '/favicon.ico', '/equipo.webp', '/equipo.jpg'
 ]);
 
 function getCookie(req, name) {
