@@ -35,6 +35,27 @@ function sortItems(list) {
 let db = loadDB();
 
 app.use(express.json({ limit: '30mb' }));
+
+// ============ Autenticacion Basic (acceso privado al sitio) ============
+const AUTH_USER = process.env.LEGADO_USER || 'LEGADO DE HONOR';
+const AUTH_PASS = process.env.LEGADO_PASS || 'Legadodehonor0826.';
+app.use((req, res, next) => {
+  const auth = req.headers.authorization;
+  if (!auth || !auth.startsWith('Basic ')) {
+    res.set('WWW-Authenticate', 'Basic realm="Legado de Honor - Acceso privado"');
+    return res.status(401).send('Autenticacion requerida');
+  }
+  try {
+    const decoded = Buffer.from(auth.slice(6), 'base64').toString('utf-8');
+    const sep = decoded.indexOf(':');
+    const user = sep >= 0 ? decoded.slice(0, sep) : '';
+    const pass = sep >= 0 ? decoded.slice(sep + 1) : '';
+    if (user === AUTH_USER && pass === AUTH_PASS) return next();
+  } catch (e) {}
+  res.set('WWW-Authenticate', 'Basic realm="Legado de Honor - Acceso privado"');
+  res.status(401).send('Credenciales invalidas');
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ============ Tabla de comisiones (link por vendedor) ============
