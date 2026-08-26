@@ -762,5 +762,11 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+async function cerrarSesion() {
+  if (!confirm('¿Cerrar sesión?')) return;
+  try { await fetch('/api/logout', { method: 'POST' }); } catch (e) {}
+  window.location.href = '/login';
+}
+
 // Cargar al inicio
 loadAll();

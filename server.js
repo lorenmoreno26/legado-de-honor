@@ -36,24 +36,46 @@ let db = loadDB();
 
 app.use(express.json({ limit: '30mb' }));
 
-// ============ Autenticacion Basic (acceso privado al sitio) ============
+// ============ Autenticacion con login page (cookie de sesion) ============
 const AUTH_USER = process.env.LEGADO_USER || 'LEGADO DE HONOR';
 const AUTH_PASS = process.env.LEGADO_PASS || 'Legadodehonor0826.';
+const AUTH_TOKEN = process.env.LEGADO_TOKEN || 'sp4rt4nos_h0n0r_2026_MJA_priv_XyZ_9k2';
+const PUBLIC_PATHS = new Set([
+  '/login', '/login.html', '/api/login', '/api/logout',
+  '/logo.png', '/logo.svg', '/favicon.ico', '/equipo.jpg'
+]);
+
+function getCookie(req, name) {
+  const raw = req.headers.cookie || '';
+  const parts = raw.split(';').map(s => s.trim());
+  const match = parts.find(s => s.startsWith(name + '='));
+  return match ? decodeURIComponent(match.slice(name.length + 1)) : null;
+}
+
 app.use((req, res, next) => {
-  const auth = req.headers.authorization;
-  if (!auth || !auth.startsWith('Basic ')) {
-    res.set('WWW-Authenticate', 'Basic realm="Legado de Honor - Acceso privado"');
-    return res.status(401).send('Autenticacion requerida');
+  if (PUBLIC_PATHS.has(req.path)) return next();
+  const token = getCookie(req, 'legado_auth');
+  if (token === AUTH_TOKEN) return next();
+  if (req.path.startsWith('/api/')) return res.status(401).json({ error: 'no autenticado' });
+  res.redirect('/login');
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.post('/api/login', (req, res) => {
+  const { user, pass } = req.body || {};
+  if (user === AUTH_USER && pass === AUTH_PASS) {
+    res.set('Set-Cookie', `legado_auth=${AUTH_TOKEN}; HttpOnly; Path=/; Max-Age=${60*60*24*30}; SameSite=Lax`);
+    return res.json({ ok: true });
   }
-  try {
-    const decoded = Buffer.from(auth.slice(6), 'base64').toString('utf-8');
-    const sep = decoded.indexOf(':');
-    const user = sep >= 0 ? decoded.slice(0, sep) : '';
-    const pass = sep >= 0 ? decoded.slice(sep + 1) : '';
-    if (user === AUTH_USER && pass === AUTH_PASS) return next();
-  } catch (e) {}
-  res.set('WWW-Authenticate', 'Basic realm="Legado de Honor - Acceso privado"');
-  res.status(401).send('Credenciales invalidas');
+  res.status(401).json({ error: 'Usuario o contraseña incorrectos' });
+});
+
+app.post('/api/logout', (req, res) => {
+  res.set('Set-Cookie', 'legado_auth=; HttpOnly; Path=/; Max-Age=0; SameSite=Lax');
+  res.json({ ok: true });
 });
 
 app.use(express.static(path.join(__dirname, 'public')));

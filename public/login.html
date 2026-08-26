@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEGADO DE HONOR · SPARTANOS · Ingreso</title>
+<link rel="icon" href="/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #d4af37;
+    --accent-2: #f0d16b;
+    --accent-dim: #b8941f;
+    --accent-glow: rgba(212, 175, 55, 0.35);
+    --bg-outer: #050505;
+    --bg-card: #1a2416;
+    --bg-card-2: #0e1a0c;
+    --text-primary: #f0e6d2;
+    --text-dim: #a09580;
+    --text-body: #d9cfb8;
+    --danger: #dc2626;
+    --danger-bg: rgba(220, 38, 38, 0.14);
+    --border: rgba(212, 175, 55, 0.35);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(212, 175, 55, 0.08), transparent 55%),
+      radial-gradient(ellipse at 80% 80%, rgba(70, 100, 40, 0.10), transparent 55%),
+      linear-gradient(135deg, #050505 0%, #0e1a0c 50%, #050505 100%);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .lobby {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1040px;
+    width: 100%;
+    background: linear-gradient(160deg, var(--bg-card) 0%, var(--bg-card-2) 100%);
+    border: 1.5px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.65),
+      0 0 60px rgba(212, 175, 55, 0.1);
+    position: relative;
+  }
+  .lobby::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    z-index: 3;
+  }
+  .side-left {
+    padding: 40px 36px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid rgba(212, 175, 55, 0.15);
+  }
+  .team-photo {
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 3 / 2;
+    border-radius: 16px;
+    background-image: url('/equipo.jpg');
+    background-size: cover;
+    background-position: center top;
+    box-shadow:
+      0 12px 32px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(212, 175, 55, 0.25);
+    margin-bottom: 24px;
+  }
+  .welcome-title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.2;
+    color: var(--accent);
+    margin-bottom: 18px;
+    text-shadow: 0 2px 12px rgba(212, 175, 55, 0.25);
+  }
+  .welcome-body {
+    color: var(--text-body);
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 360px;
+  }
+  .welcome-body p + p { margin-top: 12px; }
+  .side-right {
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .brand-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 6px 18px rgba(212, 175, 55, 0.3));
+  }
+  .brand-name {
+    font-family: 'Cinzel', 'Georgia', serif;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  .spartanos-badge {
+    display: inline-block;
+    color: var(--accent-2);
+    font-family: 'Cinzel', 'Georgia', serif;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-size: 11px;
+    padding: 4px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 14px;
+    background: rgba(212, 175, 55, 0.05);
+  }
+  .welcome-msg {
+    color: var(--text-body);
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 300px;
+    margin-bottom: 22px;
+  }
+  .signin-title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  form.login-form { width: 100%; max-width: 340px; text-align: left; }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 12px;
+    color: var(--accent-2);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .input-wrap { position: relative; }
+  input {
+    width: 100%;
+    padding: 13px 16px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+  input::placeholder { color: rgba(217, 207, 184, 0.4); }
+  input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(212, 175, 55, 0.06);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  .pw-toggle {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 0;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    line-height: 1;
+  }
+  .pw-toggle:hover { color: var(--accent); }
+  .row-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: var(--text-dim);
+  }
+  .row-inline label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: var(--text-body);
+  }
+  .row-inline input[type=checkbox] { width: auto; accent-color: var(--accent); cursor: pointer; }
+  .row-inline a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+  .row-inline a:hover { color: var(--accent-2); text-decoration: underline; }
+  button.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(180deg, var(--accent-2) 0%, var(--accent) 50%, var(--accent-dim) 100%);
+    color: #14100a;
+    border: 0;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+  }
+  button.submit-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.4);
+  }
+  button.submit-btn:disabled { opacity: 0.65; cursor: wait; }
+  .footer-note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+    margin-top: 18px;
+  }
+  .footer-note a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  .footer-note a:hover { text-decoration: underline; }
+  .error {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger);
+    color: #fecaca;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 14px;
+    text-align: center;
+    display: none;
+  }
+  .error.show { display: block; animation: shake 0.35s; }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+  @media (max-width: 860px) {
+    .lobby { grid-template-columns: 1fr; max-width: 460px; }
+    .side-left { border-right: 0; border-bottom: 1px solid rgba(212, 175, 55, 0.15); padding: 28px 24px 24px; }
+    .side-right { padding: 28px 24px 32px; }
+    .team-photo { max-width: 280px; }
+    .welcome-title { font-size: 24px; }
+    .brand-logo { width: 120px; }
+    .signin-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+  <main class="lobby">
+    <section class="side-left">
+      <div class="team-photo" role="img" aria-label="Equipo Legado de Honor"></div>
+      <h1 class="welcome-title">¡Bienvenido a<br>Legado de Honor!</h1>
+      <div class="welcome-body">
+        <p>Es un honor tenerte con nosotros. Desde hoy haces parte de una comunidad de hombres y mujeres comprometidos con el servicio, la disciplina y el honor.</p>
+        <p>Aquí encontrarás respaldo jurídico, acompañamiento permanente e información de valor.</p>
+      </div>
+    </section>
+    <section class="side-right">
+      <img src="/logo.png" alt="Legado de Honor" class="brand-logo" onerror="this.onerror=null;this.src='/logo.svg'">
+      <div class="brand-name">LEGADO DE HONOR</div>
+      <div class="spartanos-badge">· EQUIPO SPARTANOS ·</div>
+      <p class="welcome-msg">Bienvenido a casa, guerrero. Aquí comienza una alianza de honor.</p>
+      <h2 class="signin-title">Iniciar sesión</h2>
+      <form class="login-form" onsubmit="return doLogin(event)" autocomplete="on">
+        <div id="error" class="error" role="alert"></div>
+        <div class="field">
+          <label for="user">Usuario</label>
+          <div class="input-wrap">
+            <input type="text" id="user" name="user" required autocomplete="username" autofocus placeholder="LEGADO DE HONOR" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="pass">Contraseña</label>
+          <div class="input-wrap">
+            <input type="password" id="pass" name="pass" required autocomplete="current-password" placeholder="••••••••" />
+            <button type="button" class="pw-toggle" onclick="togglePw()" aria-label="Mostrar/ocultar contraseña" title="Mostrar/ocultar">👁</button>
+          </div>
+        </div>
+        <div class="row-inline">
+          <label><input type="checkbox" id="remember" checked> Recordarme</label>
+          <a href="#" onclick="event.preventDefault();alert('Para recuperar tu contraseña, contacta al administrador de Legado de Honor.')">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">Entrar</button>
+        <div class="footer-note">
+          ¿Problemas para ingresar?
+          <a href="#" onclick="event.preventDefault();alert('Contacta al administrador de Legado de Honor para solicitar tus credenciales.')">Contactar al administrador</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script>
+    function togglePw() {
+      const inp = document.getElementById('pass');
+      inp.type = inp.type === 'password' ? 'text' : 'password';
+    }
+    async function doLogin(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const err = document.getElementById('error');
+      const user = document.getElementById('user').value;
+      const pass = document.getElementById('pass').value;
+      err.classList.remove('show');
+      btn.disabled = true;
+      btn.textContent = 'Ingresando...';
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user, pass })
+        });
+        if (res.ok) { window.location.href = '/'; return false; }
+        const data = await res.json().catch(() => ({}));
+        err.textContent = data.error || 'Credenciales incorrectas';
+        err.classList.add('show');
+      } catch (ex) {
+        err.textContent = 'Error de conexión. Intenta de nuevo.';
+        err.classList.add('show');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Entrar';
+      return false;
+    }
+  </script>
+</body>
+</html>

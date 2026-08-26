@@ -943,3 +943,29 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.5; }
   transform: scale(1.1);
   background: var(--danger, #f87171);
 }
+
+/* ============ Boton de cerrar sesion ============ */
+.btn-logout {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--accent, #d4af37);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.btn-logout:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: var(--accent, #d4af37);
+  transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .btn-logout { position: static; margin-top: 12px; display: inline-block; }
+}
