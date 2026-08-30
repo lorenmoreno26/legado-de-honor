@@ -38,7 +38,7 @@ app.use(express.json({ limit: '30mb' }));
 
 // ============ Autenticacion con login page (cookie de sesion) ============
 const AUTH_USER = process.env.LEGADO_USER || 'LEGADO DE HONOR';
-const AUTH_PASS = process.env.LEGADO_PASS || 'Legadodehonor0826.';
+const AUTH_PASS = process.env.LEGADO_PASS || 'Legadohonor1924';
 const AUTH_TOKEN = process.env.LEGADO_TOKEN || 'sp4rt4nos_h0n0r_2026_MJA_priv_XyZ_9k2';
 const PUBLIC_PATHS = new Set([
   '/login', '/login.html', '/api/login', '/api/logout',
