@@ -42,7 +42,8 @@ const AUTH_PASS = process.env.LEGADO_PASS || 'Legadohonor1924';
 const AUTH_TOKEN = process.env.LEGADO_TOKEN || 'sp4rt4nos_h0n0r_2026_MJA_priv_XyZ_9k2';
 const PUBLIC_PATHS = new Set([
   '/login', '/login.html', '/api/login', '/api/logout',
-  '/logo.png', '/logo.svg', '/favicon.ico', '/equipo.webp', '/equipo.jpg'
+  '/logo.png', '/logo.svg', '/favicon.ico', '/equipo.webp', '/equipo.jpg',
+  '/alfa', '/alfa.html', '/api/alfa'
 ]);
 
 function getCookie(req, name) {
@@ -58,6 +59,17 @@ app.use((req, res, next) => {
   if (token === AUTH_TOKEN) return next();
   if (req.path.startsWith('/api/')) return res.status(401).json({ error: 'no autenticado' });
   res.redirect('/login');
+});
+
+// ============ Pagina publica ALFA (QR para uniformados) ============
+app.get('/alfa', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'alfa.html'));
+});
+// Contador de respaldo (se reinicia si Render reinicia el servidor)
+app.post('/api/alfa', (req, res) => {
+  db.alfaContador = (db.alfaContador || 0) + 1;
+  saveDB(db);
+  res.json({ count: db.alfaContador });
 });
 
 app.get('/login', (req, res) => {
