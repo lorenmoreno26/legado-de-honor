@@ -18,8 +18,8 @@ body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);
   background-image:radial-gradient(circle at 20% 10%,#2d3b28 0,transparent 55%),radial-gradient(circle at 90% 90%,#141b12 0,transparent 50%)}
 .card{width:100%;max-width:460px;background:var(--panel);border-radius:18px;overflow:hidden;
   box-shadow:0 24px 60px rgba(0,0,0,.45)}
-.top{background:#2a3825;color:#f3f1ea;padding:26px 26px 22px;text-align:center}
-.top svg{width:56px;height:56px;display:block;margin:0 auto 10px}
+.top{background:#151a12;color:#f3f1ea;padding:26px 26px 22px;text-align:center}
+.escudo{width:150px;height:150px;display:block;margin:0 auto 6px;border-radius:12px}
 .top h1{font:600 26px/1.1 Oswald,sans-serif;margin:0;letter-spacing:.5px}
 .top p{margin:6px 0 0;font-size:14px;color:#cfd4c6}
 .badge{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:var(--accent);
@@ -46,7 +46,7 @@ input:focus{outline:3px solid rgba(31,170,84,.35);border-color:var(--wa)}
 <body>
 <main class="card">
   <div class="top">
-    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 8 13v17c0 15 10 26 24 30 14-4 24-15 24-30V13L32 4z" fill="#c9a54a"/><path d="M32 10 14 17v13c0 11 7 20 18 24 11-4 18-13 18-24V17L32 10z" fill="#2a3825"/><path d="m32 20 3.6 7.3 8 1.2-5.8 5.6 1.4 8L32 38.3l-7.2 3.8 1.4-8-5.8-5.6 8-1.2z" fill="#c9a54a"/></svg>
+    <img src="/logo.png" alt="Escudo Legado de Honor" class="escudo">
     <h1>LEGADO DE HONOR</h1>
     <p>Disciplina. Defensa. Lealtad.</p>
     <div class="badge"><small>Tu código</small><span id="code">ALFA …</span></div>
